@@ -3,7 +3,7 @@ export ZSH=$HOME/.dotfiles/zsh/oh-my-zsh
 ZSH_CUSTOM=$HOME/.dotfiles/zsh/oh-my-zsh-custom
 
 # Plugins
-plugins=(git thefuck osx xcode)
+plugins=(git thefuck osx xcode sublime)
 
 # Theme
 ZSH_THEME="bullet-train"
