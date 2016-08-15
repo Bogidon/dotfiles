@@ -1,0 +1,1 @@
+/Users/bogdan/.dotfiles/zsh/oh-my-zsh-custom-originals/bullet-train-oh-my-zsh-theme/bullet-train.zsh-theme
