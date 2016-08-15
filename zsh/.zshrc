@@ -2,6 +2,9 @@ export ZSH=$HOME/.dotfiles/zsh/oh-my-zsh
 
 ZSH_CUSTOM=$HOME/.dotfiles/zsh/oh-my-zsh-custom
 
+# Plugins
+plugins=(git thefuck osx xcode)
+
 # Theme
 ZSH_THEME="bullet-train"
 BULLETTRAIN_PROMPT_ORDER=(
@@ -46,12 +49,6 @@ BULLETTRAIN_DIR_FG=white_bright
 # stamp shown in the history command output.
 # The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # HIST_STAMPS="mm/dd/yyyy"
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
 
 # User configuration
 
