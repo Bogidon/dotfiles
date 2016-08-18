@@ -18,6 +18,9 @@ BULLETTRAIN_PROMPT_ORDER=(
 BULLETTRAIN_DIR_BG=blue
 BULLETTRAIN_DIR_FG=white_bright
 
+# keys
+bindkey '^_' undo # undo completion with ctrl + _
+
 # ssh
 export SSH_KEY_PATH="~/.ssh/id_rsa"
 
@@ -29,3 +32,6 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 # enable extended pattern matching
 setopt extended_glob
+
+# source oh-my-zsh
+source $ZSH/oh-my-zsh.sh
