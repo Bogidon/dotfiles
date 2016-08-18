@@ -1,1 +1,1 @@
-/Users/Teespring11406/.dotfiles/zsh/oh-my-zsh-custom-originals/bullet-train-oh-my-zsh-theme/bullet-train.zsh-theme
+../../oh-my-zsh-custom-originals/bullet-train-oh-my-zsh-theme/bullet-train.zsh-theme
