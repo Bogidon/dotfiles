@@ -1,14 +1,15 @@
 PATH="$PATH:~/bin:/usr/local/sbin"
+PATH="$PATH:$HOME/.rvm/gems/ruby-2.2.4/bin"
 
-export ZSH=$HOME/.dotfiles/zsh/oh-my-zsh
-export GEM_HOME=$HOME/.gem
-export PATH=$GEM_HOME/ruby/2.0.0/bin:$PATH
+export ZSH="$HOME/.dotfiles/zsh/oh-my-zsh"
+export GEM_HOME="$HOME/.gem"
+export PATH="$PATH:$GEM_HOME/ruby/2.0.0/bin"
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
-ZSH_CUSTOM=$HOME/.dotfiles/zsh/oh-my-zsh-custom
+ZSH_CUSTOM="$HOME/.dotfiles/zsh/oh-my-zsh-custom"
 
 # Plugins
-plugins=(git thefuck osx xcode sublime git-extras postgres pyenv)
+plugins=(git thefuck osx xcode sublime git-extras postgres)
 
 # Theme
 ZSH_THEME="bullet-train"
