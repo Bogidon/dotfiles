@@ -7,15 +7,23 @@ export PATH="$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH"
 ZSH_CUSTOM="$HOME/.dotfiles/zsh/oh-my-zsh-custom"
 
 # Plugins
-plugins=(git thefuck osx xcode sublime git-extras postgres)
+plugins=(git git-open thefuck osx xcode sublime git-extras postgres)
 
 # Theme
 ZSH_THEME="bullet-train"
 BULLETTRAIN_PROMPT_ORDER=(
   dir
-  context
   git
 )
+BULLETTRAIN_GIT_ADDED=" "
+BULLETTRAIN_GIT_DELETED=" "
+BULLETTRAIN_GIT_MODIFIED=" "
+BULLETTRAIN_GIT_RENAMED=" "
+BULLETTRAIN_GIT_UNTRACKED=" "
+
+# completion system
+autoload -U compinit
+compinit -u
 
 # keys
 bindkey '^_' undo # undo completion with ctrl + _

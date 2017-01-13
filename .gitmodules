@@ -4,3 +4,6 @@
 [submodule "zsh/oh-my-zsh-custom-originals/bullet-train-oh-my-zsh-theme"]
 	path = zsh/oh-my-zsh-custom-originals/bullet-train-oh-my-zsh-theme
 	url = https://github.com/caiogondim/bullet-train-oh-my-zsh-theme.git
+[submodule "zsh/oh-my-zsh-custom-originals/git-open"]
+	path = zsh/oh-my-zsh-custom-originals/git-open
+	url = git@github.com:paulirish/git-open.git
