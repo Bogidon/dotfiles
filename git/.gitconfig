@@ -32,13 +32,16 @@
 	trustexitcode = true
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path =
+	path = 
 
 # merge
 [merge]
 	tool = Kaleidoscope
 [mergetool]
 	prompt = false
+[difftool "Kaleidoscope"]
+	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+	trustexitcode = true
 [mergetool "sourcetree"]
 	cmd = /Users/Teespring11406/Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
