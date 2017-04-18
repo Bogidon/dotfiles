@@ -1,0 +1,13 @@
+export PATH="$PATH:~/bin"
+export PATH="$PATH:/usr/local/sbin"
+export PATH="$PATH:$GEM_HOME/ruby/2.0.0/bin"
+export PATH="$PATH:$HOME/.rbenv/bin"
+export PATH="$PATH:$HOME/.rbenv/shims"
+export PATH="$PATH:$HOME/.cargo/bin"
+export PATH="$PATH:$ANDROID_HOME/tools"
+export PATH="$PATH:$ANDROID_HOME/platform-tools"
+
+export ANDROID_HOME="$HOME/Library/Android/sdk"
+export ANDROID_NDK="$HOME/Library/Android/ndk"
+export ZSH="$HOME/.dotfiles/zsh/oh-my-zsh"
+export SSH_KEY_PATH="~/.ssh/id_rsa"

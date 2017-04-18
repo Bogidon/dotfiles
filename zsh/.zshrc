@@ -1,9 +1,5 @@
-PATH="$PATH:~/bin:/usr/local/sbin"
-
-export ZSH="$HOME/.dotfiles/zsh/oh-my-zsh"
-export PATH="$PATH:$GEM_HOME/ruby/2.0.0/bin"
-export PATH="$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH"
-export SSH_KEY_PATH="~/.ssh/id_rsa"
+# aliases
+alias emustart='$(which emulator) -avd $(emulator -avd -list-avds | head -n 1)'
 
 ZSH_CUSTOM="$HOME/.dotfiles/zsh/oh-my-zsh-custom"
 
@@ -67,3 +63,4 @@ nvm() {
 		echo -e '\e[1;33mMessage from Bogdan: NVM not initialized. Run "nvm init".'
 	fi
 }
+eval $(/usr/libexec/path_helper -s)
