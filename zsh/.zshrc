@@ -4,7 +4,7 @@ alias emustart='$(which emulator) -avd $(emulator -avd -list-avds | head -n 1)'
 ZSH_CUSTOM="$HOME/.dotfiles/zsh/oh-my-zsh-custom"
 
 # Plugins
-plugins=(git git-open thefuck osx xcode sublime git-extras postgres)
+plugins=(git git-open thefuck osx xcode sublime git-extras postgres zsh-syntax-highlighting)
 
 # Theme
 ZSH_THEME="bullet-train"
