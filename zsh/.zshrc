@@ -97,7 +97,7 @@ nvm() {
 jntmp() {
 	TEMP=$(mktemp -d /tmp/jn_tmp.XXXXX)
 	cp ~/.dotfiles/templates/ipynb.ipynb $TEMP
-	jupyter notebook --notebook-dir=$TEMP
+	jupyter notebook $TEMP/ipynb.ipynb
 }
 
 # exclude items from completion
