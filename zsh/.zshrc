@@ -1,10 +1,11 @@
 # aliases
 alias emustart='$(which emulator) -avd $(emulator -avd -list-avds | head -n 1)'
+alias jn='jupyter notebook'
 
 ZSH_CUSTOM="$HOME/.dotfiles/zsh/oh-my-zsh-custom"
 
 # Plugins
-plugins=(git git-open thefuck osx xcode sublime git-extras postgres zsh-syntax-highlighting gradle)
+plugins=(git git-open thefuck osx xcode sublime git-extras postgres zsh-syntax-highlighting gradle docker)
 
 # Theme
 ZSH_THEME="bullet-train"
@@ -92,9 +93,20 @@ nvm() {
 	echo -e '\e[1;32mDone!'
 }
 
+# jn_tmp
+jn_tmp() {
+	TEMP=$(mktemp -d /tmp/jn_tmp.XXXXX)
+	cp ~/.dotfiles/templates/ipynb.ipynb $TEMP
+	jupyter notebook --notebook-dir=$TEMP
+}
+
 # exclude items from completion
 zstyle ':completion:*' ignored-patterns '__nvmrc_loader|__nvm_forward'
 
 eval $(/usr/libexec/path_helper -s)
 
 export PATH="$HOME/.yarn/bin:$PATH"
+
+# elixir
+test -s "$HOME/.kiex/scripts/kiex" && source "$HOME/.kiex/scripts/kiex"
+[[ -s "$HOME/.kiex/scripts/kiex" ]] && source "$HOME/.kiex/scripts/kiex"
