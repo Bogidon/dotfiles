@@ -93,8 +93,8 @@ nvm() {
 	echo -e '\e[1;32mDone!'
 }
 
-# jn_tmp
-jn_tmp() {
+# jntmp
+jntmp() {
 	TEMP=$(mktemp -d /tmp/jn_tmp.XXXXX)
 	cp ~/.dotfiles/templates/ipynb.ipynb $TEMP
 	jupyter notebook --notebook-dir=$TEMP
