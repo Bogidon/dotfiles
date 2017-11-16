@@ -1,7 +1,11 @@
 dotfile_configure() {
 
 	install_dependencies() {
-		yes | sudo apt-get install ttf-ancient-fonts dconf-cli
+		yes | sudo apt-get install /
+			ttf-ancient-fonts /
+			dconf-cli /
+			python-pip
+
 	}
 
 	configure_gnome_terminal() {
