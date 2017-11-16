@@ -8,7 +8,7 @@ alias jn='jupyter notebook'
 # Temporary Jupyter Notebook
 jntmp() {
 	TEMP=$(mktemp -d /tmp/jn_tmp.XXXXX)
-	cp ~/.dotfiles/templates/ipynb.ipynb $TEMP
+	cp "$DOTFILES/templates/ipynb.ipynb" $TEMP
 	jupyter notebook $TEMP/ipynb.ipynb
 }
 

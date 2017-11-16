@@ -1,4 +1,5 @@
 export ZSH="$HOME/.dotfiles/zsh/oh-my-zsh"
+export DOTFILES="$HOME/.dotfiles"
 
 case "$(uname -s)" in
     Linux*)     BOGDAN_OSID=linux;;
@@ -9,4 +10,4 @@ case "$(uname -s)" in
 esac
 
 export BOGDAN_OSID
-source "$HOME/.dotfiles/zsh/.zshenv_$BOGDAN_OSID"
+source "$DOTFILES/zsh/.zshenv_$BOGDAN_OSID"

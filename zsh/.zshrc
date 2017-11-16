@@ -4,7 +4,7 @@ ZSH_CUSTOM="$HOME/.dotfiles/zsh/oh-my-zsh-custom"
 plugins=(git git-open thefuck sublime git-extras postgres zsh-syntax-highlighting gradle docker)
 
 # Source OS-specific .zshrc
-source "$HOME/.dotfiles/zsh/.zshrc_$BOGDAN_OSID"
+source "$DOTFILES/zsh/.zshrc_$BOGDAN_OSID"
 
 # theme
 ZSH_THEME="bullet-train"
