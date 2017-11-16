@@ -11,14 +11,14 @@ dotfile_configure() {
 		sudo pip install --upgrade pip
 		sudo pip3 install --upgrade pip3
 		sudo pip3 install thefuck
-	} install_dependencies
+	} ; install_dependencies
 
 	move_assets() {
 		echo "Moving assets..."
 		mkdir -p "$HOME/.fonts"
 		cp "$DOTFILES/assets/Meslo LG M DZ Regular for Powerline.otf" "$HOME/.fonts"
 		echo "Finished moving assets."
-	} move_assets
+	} ; move_assets
 
 	configure_gnome_terminal() {
 		echo "Configuring gnome-terminal..."
@@ -65,7 +65,7 @@ dotfile_configure() {
 		gsettings set $schemapath scrollback-unlimited "false"
 		gsettings set $schemapath scrollback-lines 10000
 		echo "Finished configuring gnome-terminal."
-	} configure_gnome_terminal
+	} ; configure_gnome_terminal
 
 	echo "Configuration complete. Please restart your terminal session."
 }
