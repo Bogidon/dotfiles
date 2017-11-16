@@ -4,10 +4,13 @@ dotfile_configure() {
 		yes | sudo apt-get install \
 			ttf-ancient-fonts \
 			dconf-cli \
-			python-pip
+			python-pip \
+			python3 \
+			python3-pip
 
-		pip install thefuck
-
+		sudo pip install --upgrade pip
+		sudo pip3 install --upgrade pip3
+		sudo pip3 install thefuck
 	}
 	install_dependencies
 
