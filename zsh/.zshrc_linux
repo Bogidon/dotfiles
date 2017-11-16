@@ -6,7 +6,10 @@ dotfile_configure() {
 			dconf-cli /
 			python-pip
 
+		pip install thefuck
+
 	}
+	install_dependencies
 
 	configure_gnome_terminal() {
 		profile=$(gsettings get org.gnome.Terminal.ProfilesList default)
