@@ -1,0 +1,3 @@
+dotfile_configure() {
+	sudo apt-get install ttf-ancient-fonts
+}
