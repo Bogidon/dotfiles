@@ -1,16 +1,12 @@
-export ANDROID_HOME="$HOME/Library/Android/sdk"
-export ANDROID_NDK="$HOME/Library/Android/ndk"
-export GEM_HOME="$HOME/.gem"
-export SSH_KEY_PATH="~/.ssh/id_rsa"
 export ZSH="$HOME/.dotfiles/zsh/oh-my-zsh"
 
-export PATH="$PATH:~/bin"
-export PATH="$PATH:/usr/local/sbin"
-export PATH="$PATH:$GEM_HOME/ruby/2.0.0/bin"
-export PATH="$PATH:$HOME/.rbenv/bin"
-export PATH="$PATH:$HOME/.rbenv/shims"
-export PATH="$PATH:$HOME/.cargo/bin"
-export PATH="$PATH:$ANDROID_HOME/tools"
-export PATH="$PATH:$ANDROID_HOME/platform-tools"
-export PATH="$PATH:$HOME/.yarn/bin"
-export PATH="$PATH:$HOME/anaconda3/bin"
+case "$(uname -s)" in
+    Linux*)     BOGDAN_OSID=linux;;
+    Darwin*)    BOGDAN_OSID=macos;;
+    CYGWIN*)    echo "Your OS isn't supported by Bogdan's dotfiles.";;
+    MINGW*)     echo "Your OS isn't supported by Bogdan's dotfiles.";;
+    *)          echo "Your OS is not recognized by Bogdan's dotfiles.";;
+esac
+
+export BOGDAN_OSID
+source "$HOME/.dotfiles/zsh/.zshenv_$BOGDAN_OSID"

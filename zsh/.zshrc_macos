@@ -1,0 +1,80 @@
+# plugins
+plugins+=(osx xcode)
+
+# aliases
+alias emustart='$(which emulator) -avd $(emulator -avd -list-avds | head -n 1)'
+alias jn='jupyter notebook'
+
+# Temporary Jupyter Notebook
+jntmp() {
+	TEMP=$(mktemp -d /tmp/jn_tmp.XXXXX)
+	cp ~/.dotfiles/templates/ipynb.ipynb $TEMP
+	jupyter notebook $TEMP/ipynb.ipynb
+}
+
+# iTerm2
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+# macOS path management (idk how this got here)
+eval $(/usr/libexec/path_helper -s)
+
+# Language Version Managers
+
+## rbenv
+rbenv() {
+	arg1=$1
+	if [ "$arg1" = "init" ]; then
+		eval "$(rbenv init -)"
+		EXIT=$?
+		if [ $EXIT = 0 ]; then
+			unset -f rbenv
+		else
+			echo -e '\e[1;33mMessage from Bogdan: rbenv failed to initialize.'
+		fi
+	elif; then
+		echo -e '\e[1;33mMessage from Bogdan: rbenv not initialized. Run "rbenv init".'
+	fi
+}
+
+## nvmrc loader
+__nvmrc_loader() {
+  local node_version="$(nvm version)"
+  local nvmrc_path="$(nvm_find_nvmrc)"
+
+  if [ -n "$nvmrc_path" ]; then
+    local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
+
+    if [ "$nvmrc_node_version" = "N/A" ]; then
+      nvm install
+    elif [ "$nvmrc_node_version" != "$node_version" ]; then
+      nvm use
+    fi
+  elif [ "$node_version" != "$(nvm version default)" ]; then
+    echo "Reverting to nvm default version"
+    nvm use default
+  fi
+}
+
+## nvm forward
+__nvm_forward() {
+	nvm "$@"
+}
+
+## nvm
+nvm() {
+	echo -e '\e[1;33mMessage from Bogdan: initializing nvm...\e[0m'
+	export NVM_DIR="/usr/local/nvm"
+	[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # load nvm
+	__nvmrc_loader # configure .nvmrc loader
+	autoload -Uz add-zsh-hook
+	add-zsh-hook chpwd __nvmrc_loader
+	if ! [ $# -eq 0 ]; then # forward arguments to nvm, if supplied
+		echo -e '\e[1;33mRerouting arguments to nvm...\e[0m'
+		__nvm_forward "$@";
+	fi
+	echo -e '\e[1;32mDone!'
+}
+
+## elixir
+test -s "$HOME/.kiex/scripts/kiex" && source "$HOME/.kiex/scripts/kiex"
+[[ -s "$HOME/.kiex/scripts/kiex" ]] && source "$HOME/.kiex/scripts/kiex"
