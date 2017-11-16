@@ -9,7 +9,7 @@ dotfile_configure() {
 			python3-pip
 
 		sudo pip install --upgrade pip
-		sudo pip3 install --upgrade pip3
+		sudo pip3 install --upgrade pip
 		sudo pip3 install thefuck
 	} ; install_dependencies
 
@@ -64,6 +64,11 @@ dotfile_configure() {
 		gsettings set $schemapath encoding "'UTF-8'"
 		gsettings set $schemapath scrollback-unlimited "false"
 		gsettings set $schemapath scrollback-lines 10000
+		gsettings set $schemapath use-custom-command "true"
+		gsettings set $schemapath custom-command "'/usr/bin/zsh'"
+		gsettings set $schemapath login-shell "false"
+		gsettings set $schemapath exit-action "close"
+
 		echo "Finished configuring gnome-terminal."
 	} ; configure_gnome_terminal
 
