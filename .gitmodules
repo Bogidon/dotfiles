@@ -13,3 +13,6 @@
 [submodule "vim/amix_vimrc"]
 	path = vim/amix_vimrc
 	url = git@github.com:amix/vimrc.git
+[submodule "tmux/gpakosz_tmux"]
+	path = tmux/gpakosz_tmux
+	url = git@github.com:gpakosz/.tmux.git

@@ -6,7 +6,8 @@ dotfile_configure() {
 			dconf-cli \
 			python-pip \
 			python3 \
-			python3-pip
+			python3-pip \
+			vim
 
 		sudo pip install --upgrade pip
 		sudo pip3 install --upgrade pip
@@ -74,4 +75,7 @@ dotfile_configure() {
 
 	echo "Configuration complete. Please restart your terminal session."
 }
+
+# shell envs
+EDITOR=vim
 

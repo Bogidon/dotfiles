@@ -6,6 +6,15 @@ plugins=(git git-open thefuck sublime git-extras postgres zsh-syntax-highlightin
 # Source OS-specific .zshrc
 source "$DOTFILES/zsh/.zshrc_$BOGDAN_OSID"
 
+# Per-machine dotfiles (optional, in ~/.zsh_custom_machines)
+if [[ -f "$HOME/.zsh_custom_machines" ]]; then
+	source "$HOME/.zsh_custom_machines"
+
+	for machine in $ZSH_CUSTOM_MACHINES; do
+		source $DOTFILES"/zsh/.zshrc_"$BOGDAN_OSID"_"$machine
+	done
+fi
+
 # theme
 ZSH_THEME="bullet-train"
 BULLETTRAIN_PROMPT_ORDER=(
@@ -21,9 +30,6 @@ BULLETTRAIN_GIT_UNTRACKED=" "
 # completion system
 autoload -U compinit
 compinit -u
-
-# shell envs
-EDITOR=st
 
 # keys
 bindkey '^_' undo # undo completion with ctrl + _
