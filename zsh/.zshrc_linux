@@ -76,5 +76,6 @@ dotfile_configure() {
 	echo "Configuration complete. Please restart your terminal session."
 }
 
-# ROS Kinetic Kame
-source /opt/ros/kinetic/setup.zsh
+# shell envs
+EDITOR=vim
+

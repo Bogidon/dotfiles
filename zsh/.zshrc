@@ -22,9 +22,6 @@ BULLETTRAIN_GIT_UNTRACKED=" "
 autoload -U compinit
 compinit -u
 
-# shell envs
-EDITOR=st
-
 # keys
 bindkey '^_' undo # undo completion with ctrl + _
 
