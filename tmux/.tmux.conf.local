@@ -4,6 +4,11 @@
 #         Copyright 2012— Gregory Pakosz (@gpakosz).
 
 
+# Mine!
+set-option -g default-shell /bin/zsh
+
+
+
 # -- navigation ----------------------------------------------------------------
 
 # if you're running tmux within iTerm2
