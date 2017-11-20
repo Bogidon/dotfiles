@@ -36,3 +36,4 @@ source $ZSH/oh-my-zsh.sh
 
 # exclude items from completion
 zstyle ':completion:*' ignored-patterns '__nvmrc_loader|__nvm_forward'
+source /opt/ros/kinetic/setup.zsh
