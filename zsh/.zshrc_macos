@@ -1,3 +1,29 @@
+dotfile_configure() {
+
+	install_dependencies() {
+		which -s brew
+		if [[ $? != 0 ]] ; then
+		    # Install Homebrew
+		    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+		else
+			# Update Homebrew
+		    brew update
+		fi
+
+		yes | brew install \
+			reattach-to-user-namespace
+	} ; install_dependencies
+
+	move_assets() {
+		# TODO
+	} ; move_assets
+
+	echo "Configuration complete."
+}
+
+# shell envs
+EDITOR=st
+
 # plugins
 plugins+=(osx xcode)
 

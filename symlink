@@ -1,0 +1,9 @@
+#!/bin/bash
+
+ln -s -f $HOME/.dotfiles/zsh/.zshrc $HOME
+ln -s -f $HOME/.dotfiles/zsh/.zshenv $HOME
+ln -s -f $HOME/.dotfiles/tmux/gpakosz_tmux/.tmux.conf $HOME
+ln -s -f $HOME/.dotfiles/tmux/.tmux.conf.local $HOME
+
+# .gitconfig is not yet deterministic
+# ln -s $HOME/.dotfiles/git/.gitconfig $HOME

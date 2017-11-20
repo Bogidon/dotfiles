@@ -75,3 +75,6 @@ dotfile_configure() {
 	echo "Configuration complete. Please restart your terminal session."
 }
 
+# shell envs
+EDITOR=vim
+
