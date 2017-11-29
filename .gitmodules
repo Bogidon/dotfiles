@@ -16,3 +16,6 @@
 [submodule "tmux/gpakosz_tmux"]
 	path = tmux/gpakosz_tmux
 	url = git@github.com:gpakosz/.tmux.git
+[submodule "templates/ModSimPy"]
+	path = templates/ModSimPy
+	url = git@github.com:AllenDowney/ModSimPy.git
