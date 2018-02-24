@@ -1,0 +1,88 @@
+tap "osrf/simulation"
+tap "ros/deps"
+tap "homebrew/fuse"
+tap "homebrew/science"
+tap "homebrew/core"
+tap "homebrew/versions"
+tap "homebrew/binary"
+tap "homebrew/boneyard"
+tap "homebrew/gui"
+tap "homebrew/bundle"
+tap "homebrew/services"
+tap "koekeishiya/formulae"
+tap "facebook/fb"
+tap "caskroom/cask"
+brew "bash-completion"
+brew "bfg"
+brew "carthage"
+brew "cdrtools"
+brew "cloc"
+brew "cmake"
+brew "curl", args: ["with-openssl"], link: true
+brew "diff-so-fancy"
+brew "entr"
+brew "ffmpeg"
+brew "little-cms2"
+brew "git", args: ["without-completions"]
+brew "gmp"
+brew "libtool"
+brew "hicolor-icon-theme"
+brew "git-annex"
+brew "git-extras"
+brew "git-flow"
+brew "git-lfs"
+brew "graphicsmagick"
+brew "gsl"
+brew "pangomm"
+brew "gtkmm"
+brew "highlight"
+brew "htop"
+brew "imagemagick"
+brew "mas"
+brew "pipenv"
+brew "reattach-to-user-namespace"
+brew "the_silver_searcher"
+brew "thefuck"
+brew "tig"
+brew "tmux"
+brew "wget"
+brew "yarn"
+brew "youtube-dl"
+brew "zsh"
+cask "ngrok"
+mas "Apple Configurator 2", id: 1037126344
+mas "BetterSnapTool", id: 417375580
+mas "Cardhop", id: 1290358394
+mas "Clear", id: 504544917
+mas "DaisyDisk", id: 411643860
+mas "DwayneCam", id: 524382627
+mas "Fantastical 2", id: 975937182
+mas "Fine Chromatic Tuner", id: 1174330003
+mas "FruitJuice", id: 671736912
+mas "GIF Brewery 3", id: 1081413713
+mas "Helium", id: 1054607607
+mas "iA Writer", id: 775737590
+mas "iMovie", id: 408981434
+mas "JustFocus", id: 1142151959
+mas "Keynote", id: 409183694
+mas "Keypad", id: 928906884
+mas "LittleIpsum", id: 405772121
+mas "Memory Clean", id: 451444120
+mas "Numbers", id: 409203825
+mas "Pages", id: 409201541
+mas "Paste", id: 967805235
+mas "PiPifier", id: 1160374471
+mas "Prepo", id: 476533227
+mas "QuickSketch", id: 1079970088
+mas "Realm Browser", id: 1007457278
+mas "Reeder", id: 880001334
+mas "Shazam", id: 897118787
+mas "Sip", id: 507257563
+mas "Slack", id: 803453959
+mas "Spark", id: 1176895641
+mas "The Unarchiver", id: 425424353
+mas "Trello", id: 1278508951
+mas "Tweetbot", id: 557168941
+mas "Unclutter", id: 577085396
+mas "WhatsApp", id: 1147396723
+mas "Yoink", id: 457622435

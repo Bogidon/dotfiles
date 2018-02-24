@@ -10,9 +10,8 @@ dotfile_configure() {
 		    brew update
 		fi
 
-		yes | brew install \
-			reattach-to-user-namespace
-	} ; install_dependencies
+		# Install from Brewfile
+		yes | brew bundle --file "$HOME/Brewfile"
 
 	move_assets() {
 		# TODO
@@ -82,20 +81,21 @@ eval $(/usr/libexec/path_helper -s)
 # Language Version Managers
 
 ## rbenv
-rbenv() {
-	arg1=$1
-	if [ "$arg1" = "init" ]; then
-		eval "$(rbenv init -)"
-		EXIT=$?
-		if [ $EXIT = 0 ]; then
-			unset -f rbenv
-		else
-			echo -e '\e[1;33mMessage from Bogdan: rbenv failed to initialize.'
-		fi
-	elif; then
-		echo -e '\e[1;33mMessage from Bogdan: rbenv not initialized. Run "rbenv init".'
-	fi
-}
+# rbenv() {
+# 	arg1=$1
+# 	if [ "$arg1" = "init" ]; then
+# 		eval "$(rbenv init -)"
+# 		EXIT=$?
+# 		if [ $EXIT = 0 ]; then
+# 			unset -f rbenv
+# 		else
+# 			echo -e '\e[1;33mMessage from Bogdan: rbenv failed to initialize.'
+# 		fi
+# 	elif; then
+# 		echo -e '\e[1;33mMessage from Bogdan: rbenv not initialized. Run "rbenv init".'
+# 	fi
+# }
+eval "$(rbenv init -)"
 
 ## nvmrc loader
 __nvmrc_loader() {
