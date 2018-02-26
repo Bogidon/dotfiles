@@ -46,6 +46,9 @@ defaults write com.apple.menuextra.battery ShowPercent YES
 # Prevent Photos from opening automatically when devices are plugged in
 defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
 
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerDrag -bool true
+defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerDrag -bool true
+
 # Disable Dashboard
 defaults write com.apple.dashboard mcx-disabled -bool true 
 

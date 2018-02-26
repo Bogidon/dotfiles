@@ -1,6 +1,9 @@
 dotfile_configure() {
 
 	install_dependencies() {
+		# Change default shell to zsh
+		chsh -s /bin/zsh
+
 		which -s brew
 		if [[ $? != 0 ]] ; then
 		    # Install Homebrew
