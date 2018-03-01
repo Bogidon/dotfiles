@@ -38,6 +38,15 @@ plugins+=(osx xcode)
 alias emustart='$(which emulator) -avd $(emulator -avd -list-avds | head -n 1)'
 alias jn='jupyter notebook'
 
+# SSH into vagrant VM by directory name (or other fields from `vagrant global-status`)
+vagssh() {
+	if [ -z "$1" ] ; then
+		vagrant ssh
+	else
+		vagrant ssh $(vagrant global-status | grep $1 | cut -c1-8)
+	fi
+}
+
 # Temporary Jupyter Notebook
 jntmp() {
 	TEMP=$(mktemp -d /tmp/jn_tmp.XXXXX)
