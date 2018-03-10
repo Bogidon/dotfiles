@@ -47,6 +47,23 @@ vagssh() {
 	fi
 }
 
+vaghalt() {
+	if [ -z "$1" ] ; then
+		vagrant halt
+	else
+		if [ "$1" = "all" ] ; then
+			ids=("${(@f)$(vagrant global-status | grep running | cut -c1-8)}")
+			for id in $ids; do
+				cmd="vagrant halt $id"
+				echo "running... $cmd"
+				eval $cmd
+			done
+		else
+			vagrant halt $(vagrant global-status | grep $1 | cut -c1-8)
+		fi
+	fi
+}
+
 # Temporary Jupyter Notebook
 jntmp() {
 	TEMP=$(mktemp -d /tmp/jn_tmp.XXXXX)
