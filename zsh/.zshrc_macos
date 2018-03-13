@@ -38,28 +38,35 @@ plugins+=(osx xcode)
 alias emustart='$(which emulator) -avd $(emulator -avd -list-avds | head -n 1)'
 alias jn='jupyter notebook'
 
-# SSH into vagrant VM by directory name (or other fields from `vagrant global-status`)
-vagssh() {
+# Vagrant command that allows easy manipulation of VMs regardless of current dir
+# (and allows for commands to be applied to all VMs)
+vag() {	
 	if [ -z "$1" ] ; then
-		vagrant ssh
-	else
-		vagrant ssh $(vagrant global-status | grep $1 | cut -c1-8)
-	fi
-}
+		# show documentation 
+cat <<'EOL'
+vag - shortcut for controlling Vagrant
+--------------------------------------
+vag COMMAND [SEARCHSTR|all]
 
-vaghalt() {
-	if [ -z "$1" ] ; then
-		vagrant halt
+COMMAND - vagrant command that accepts an id (e.g. halt, up, suspend)
+SEARCHSTR - used to grep result of `vagrant global-status` to find IDs
+all - apply to all VMs in `vagrant global-status`
+EOL
 	else
-		if [ "$1" = "all" ] ; then
+		if [ -z "$2" ] ; then
+			# run `vagrant $COMMAND`
+			vagrant $1
+		elif [ "$2" = "all" ] ; then
+			# run `vagrant $COMMAND` with each ID in global-status
 			ids=("${(@f)$(vagrant global-status | grep running | cut -c1-8)}")
 			for id in $ids; do
-				cmd="vagrant halt $id"
+				cmd="vagrant $1 $id"
 				echo "running... $cmd"
 				eval $cmd
 			done
 		else
-			vagrant halt $(vagrant global-status | grep $1 | cut -c1-8)
+			# run `vagrant $COMMAND` with ID from provided name
+			vagrant $1 $(vagrant global-status | grep $2 | cut -c1-8)
 		fi
 	fi
 }
