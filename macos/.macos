@@ -61,7 +61,7 @@ defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3 # Enable full keyboard access for all controls
 defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false # Disable press-and-hold for keys in favor of key repeat
 defaults write NSGlobalDomain KeyRepeat -int 1
-defaults write NSGlobalDomain InitialKeyRepeat -int 10
+defaults write NSGlobalDomain InitialKeyRepeat -int 15
 defaults write NSGlobalDomain AppleFontSmoothing -int 1 # Enable subpixel font rendering on non-Apple LCDs
 defaults write NSGlobalDomain WebKitDeveloperExtras -bool true # Add a context menu item for showing the Web Inspector in web views
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
@@ -81,7 +81,8 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 defaults write com.apple.NetworkBrowser BrowseAllInterfaces -bool true # Enable AirDrop over Ethernet and on unsupported Macs running Lion
 
-defaults write com.apple.dock static-only -bool true # Show only open applications in the Dock
+defaults write com.apple.dock static-only -bool false # Show only open applications in the Dock (if true)
+defaults write com.apple.dock expose-group-apps -bool true
 defaults write com.apple.dock mru-spaces -bool false # Don’t automatically rearrange Spaces based on most recent use
 defaults write com.apple.dock tilesize -int 50 # Set the icon size of Dock items to 36 pixels
 defaults write com.apple.dock orientation -string "right"
