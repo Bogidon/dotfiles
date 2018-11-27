@@ -192,6 +192,8 @@
 						<false/>
 						<key>selectedVariableUUID</key>
 						<string>3891EE05-D4D9-4628-AF61-319BF88FCD48</string>
+						<key>variableUUIDsInMenu</key>
+						<array/>
 					</dict>
 				</dict>
 				<key>AMProvides</key>
@@ -219,7 +221,7 @@
 				<key>CFBundleVersion</key>
 				<string>1.0.2</string>
 				<key>CanShowSelectedItemsWhenRun</key>
-				<false/>
+				<true/>
 				<key>CanShowWhenRun</key>
 				<true/>
 				<key>Category</key>
@@ -229,7 +231,7 @@
 				<key>Class Name</key>
 				<string>Set_Value_of_Variable</string>
 				<key>InputUUID</key>
-				<string>109E7411-6F60-4159-B67C-FBE4871034B3</string>
+				<string>A12FD353-4C30-416C-92ED-59E2F709674D</string>
 				<key>Keywords</key>
 				<array>
 					<string>variable</string>
@@ -239,9 +241,9 @@
 					<string>storage</string>
 				</array>
 				<key>OutputUUID</key>
-				<string>E18F28A1-0870-48C4-9B5A-95E74DDF4859</string>
+				<string>10B6866E-4E18-4382-95AC-BEF516C85682</string>
 				<key>UUID</key>
-				<string>65D7C485-6A01-4F33-9B25-A6E0E0104CD4</string>
+				<string>EF69FDC6-1055-4D81-B850-E50B292404F6</string>
 				<key>UnlocalizedApplications</key>
 				<array>
 					<string>Automator</string>
@@ -433,7 +435,7 @@
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>769.000000:713.000000</string>
+				<string>769.000000:533.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Ask for Finder Items.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -467,7 +469,7 @@
 						<key>isPathPopUp</key>
 						<false/>
 						<key>selectedVariableUUID</key>
-						<string>5BB0DAED-1FA2-4E3F-A4E7-5C37F83BAF78</string>
+						<string>EAB923C6-4B3D-4473-B597-53599DF6C7B5</string>
 						<key>variableUUIDsInMenu</key>
 						<array/>
 					</dict>
@@ -490,14 +492,14 @@
 				<key>ActionParameters</key>
 				<dict>
 					<key>variableUUID</key>
-					<string>5BB0DAED-1FA2-4E3F-A4E7-5C37F83BAF78</string>
+					<string>EAB923C6-4B3D-4473-B597-53599DF6C7B5</string>
 				</dict>
 				<key>BundleIdentifier</key>
 				<string>com.apple.Automator.SetValueofVariable</string>
 				<key>CFBundleVersion</key>
 				<string>1.0.2</string>
 				<key>CanShowSelectedItemsWhenRun</key>
-				<false/>
+				<true/>
 				<key>CanShowWhenRun</key>
 				<true/>
 				<key>Category</key>
@@ -540,12 +542,10 @@
 						<string>0</string>
 					</dict>
 				</dict>
-				<key>conversionLabel</key>
-				<integer>0</integer>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>769.000000:999.000000</string>
+				<string>769.000000:639.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Set Value of Variable.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -586,11 +586,9 @@
 				<dict>
 					<key>Container</key>
 					<string>List</string>
-					<key>Optional</key>
-					<false/>
 					<key>Types</key>
 					<array>
-						<string>com.apple.cocoa.path</string>
+						<string>*</string>
 					</array>
 				</dict>
 				<key>AMRequiredResources</key>
@@ -618,10 +616,8 @@
 				</array>
 				<key>Class Name</key>
 				<string>Get_Value_of_Variable</string>
-				<key>IgnoresInput</key>
-				<true/>
 				<key>InputUUID</key>
-				<string>E3ACD181-B378-413F-A19C-74D2D172B721</string>
+				<string>EC6869A7-B1BE-4581-AE5A-654B1342699D</string>
 				<key>Keywords</key>
 				<array>
 					<string>variable</string>
@@ -631,9 +627,9 @@
 					<string>storage</string>
 				</array>
 				<key>OutputUUID</key>
-				<string>E5C5426F-6474-4E4E-9C4D-17C4D2A04DB0</string>
+				<string>3E5FDA56-0F48-4C4E-9537-E190801E6A78</string>
 				<key>UUID</key>
-				<string>D30DD8A1-8263-4B54-A5DC-E7312976AF7B</string>
+				<string>687D4061-B05C-4557-ABAC-C320C2E402AA</string>
 				<key>UnlocalizedApplications</key>
 				<array>
 					<string>Automator</string>
@@ -659,7 +655,7 @@
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>769.000000:1154.000000</string>
+				<string>769.000000:742.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Get Value of Variable.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -681,26 +677,32 @@
 					</array>
 				</dict>
 				<key>AMActionVersion</key>
-				<string>v.1.1.2</string>
+				<string>v.9</string>
 				<key>AMApplication</key>
 				<array>
-					<string>Finder</string>
+					<string>Preview</string>
 				</array>
 				<key>AMParameterProperties</key>
 				<dict>
-					<key>replaceExisting</key>
+					<key>autoGenerateOutputName</key>
 					<dict/>
-					<key>toDirectory</key>
+					<key>outputDirectory</key>
 					<dict>
 						<key>isPathPopUp</key>
 						<true/>
 						<key>selectedVariableUUID</key>
-						<string>5BB0DAED-1FA2-4E3F-A4E7-5C37F83BAF78</string>
+						<string>EAB923C6-4B3D-4473-B597-53599DF6C7B5</string>
 						<key>variableUUIDsInMenu</key>
 						<array>
-							<string>5BB0DAED-1FA2-4E3F-A4E7-5C37F83BAF78</string>
+							<string>EAB923C6-4B3D-4473-B597-53599DF6C7B5</string>
 						</array>
 					</dict>
+					<key>outputName</key>
+					<dict/>
+					<key>pageSizeMode</key>
+					<dict/>
+					<key>replaceExistingOutput</key>
+					<dict/>
 				</dict>
 				<key>AMProvides</key>
 				<dict>
@@ -711,85 +713,59 @@
 						<string>com.apple.cocoa.path</string>
 					</array>
 				</dict>
+				<key>AMRequiredResources</key>
+				<array/>
 				<key>ActionBundlePath</key>
-				<string>/System/Library/Automator/Move Finder Items.action</string>
+				<string>/System/Library/Automator/New PDF from Images.action</string>
 				<key>ActionName</key>
-				<string>Move Finder Items</string>
+				<string>New PDF from Images</string>
 				<key>ActionParameters</key>
 				<dict>
-					<key>replaceExisting</key>
+					<key>autoGenerateOutputName</key>
 					<false/>
-					<key>toDirectory</key>
-					<string>5BB0DAED-1FA2-4E3F-A4E7-5C37F83BAF78</string>
+					<key>outputDirectory</key>
+					<string></string>
+					<key>outputName</key>
+					<string>NewPDF</string>
+					<key>pageSizeMode</key>
+					<integer>0</integer>
+					<key>replaceExistingOutput</key>
+					<false/>
 				</dict>
 				<key>BundleIdentifier</key>
-				<string>com.apple.Automator.MoveFiles</string>
+				<string>com.apple.Automator.NewPDFfromImages</string>
 				<key>CFBundleVersion</key>
-				<string>1.1.2</string>
+				<string>9</string>
 				<key>CanShowSelectedItemsWhenRun</key>
 				<true/>
 				<key>CanShowWhenRun</key>
 				<true/>
 				<key>Category</key>
 				<array>
-					<string>AMCategoryFilesAndFolders</string>
+					<string>AMCategoryPDFs</string>
 				</array>
 				<key>Class Name</key>
-				<string>MoveFilesAction</string>
+				<string>NewFromImages</string>
 				<key>InputUUID</key>
-				<string>E681994B-5257-48A5-B281-CEC72C91FB2E</string>
+				<string>92F44BA2-74CD-4238-814F-DCD7800FCAEF</string>
 				<key>Keywords</key>
-				<array>
-					<string>File</string>
-					<string>Move</string>
-				</array>
+				<array/>
 				<key>OutputUUID</key>
-				<string>D262B7A6-56EC-49F8-8A80-CBF14A85456D</string>
-				<key>ShowWhenRun</key>
-				<false/>
+				<string>70F6ED23-9EBE-4FB9-B656-F59C48003ABA</string>
 				<key>UUID</key>
-				<string>75057A44-140C-44BE-AAE4-BEA9490D1967</string>
+				<string>3158A986-9BF8-4C2C-84F6-00FCB20CCC2D</string>
 				<key>UnlocalizedApplications</key>
 				<array>
-					<string>Finder</string>
+					<string>Preview</string>
 				</array>
 				<key>arguments</key>
-				<dict>
-					<key>0</key>
-					<dict>
-						<key>default value</key>
-						<string>~/Desktop</string>
-						<key>name</key>
-						<string>toDirectory</string>
-						<key>required</key>
-						<string>0</string>
-						<key>type</key>
-						<string>0</string>
-						<key>uuid</key>
-						<string>0</string>
-					</dict>
-					<key>1</key>
-					<dict>
-						<key>default value</key>
-						<false/>
-						<key>name</key>
-						<string>replaceExisting</string>
-						<key>required</key>
-						<string>0</string>
-						<key>type</key>
-						<string>0</string>
-						<key>uuid</key>
-						<string>1</string>
-					</dict>
-				</dict>
-				<key>conversionLabel</key>
-				<integer>0</integer>
+				<dict/>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>769.000000:1437.000000</string>
+				<string>769.000000:1127.000000</string>
 				<key>nibPath</key>
-				<string>/System/Library/Automator/Move Finder Items.action/Contents/Resources/Base.lproj/main.nib</string>
+				<string>/System/Library/Automator/New PDF from Images.action/Contents/Resources/English.lproj/main.nib</string>
 			</dict>
 			<key>isViewVisible</key>
 			<true/>
@@ -797,54 +773,44 @@
 	</array>
 	<key>connectors</key>
 	<dict>
-		<key>03C6DB87-4222-4D48-AC22-25B56CA0BB6A</key>
+		<key>6F441EF2-CA59-45DD-9FB8-A09F2AE72F61</key>
+		<dict>
+			<key>from</key>
+			<string>EF69FDC6-1055-4D81-B850-E50B292404F6 - EF69FDC6-1055-4D81-B850-E50B292404F6</string>
+			<key>to</key>
+			<string>E002BA8A-8B78-42B7-8902-596A57869103 - E002BA8A-8B78-42B7-8902-596A57869103</string>
+		</dict>
+		<key>8DFD7CCA-C55A-4FEB-B80F-BBB15C20B853</key>
 		<dict>
 			<key>from</key>
 			<string>920C1D0D-CBF5-440F-831F-B60343CF6ADA - 920C1D0D-CBF5-440F-831F-B60343CF6ADA</string>
 			<key>to</key>
-			<string>D30DD8A1-8263-4B54-A5DC-E7312976AF7B - D30DD8A1-8263-4B54-A5DC-E7312976AF7B</string>
+			<string>687D4061-B05C-4557-ABAC-C320C2E402AA - 687D4061-B05C-4557-ABAC-C320C2E402AA</string>
 		</dict>
-		<key>54A69CFB-9759-4C90-858A-AC2947AF4156</key>
+		<key>BF8A465C-27F8-4EB6-A296-A22EBA289175</key>
 		<dict>
 			<key>from</key>
-			<string>D30DD8A1-8263-4B54-A5DC-E7312976AF7B - D30DD8A1-8263-4B54-A5DC-E7312976AF7B</string>
+			<string>687D4061-B05C-4557-ABAC-C320C2E402AA - 687D4061-B05C-4557-ABAC-C320C2E402AA</string>
 			<key>to</key>
-			<string>75057A44-140C-44BE-AAE4-BEA9490D1967 - 75057A44-140C-44BE-AAE4-BEA9490D1967</string>
+			<string>3158A986-9BF8-4C2C-84F6-00FCB20CCC2D - 3158A986-9BF8-4C2C-84F6-00FCB20CCC2D</string>
 		</dict>
-		<key>649F509A-4A93-46C1-A46E-6CC28B275FE6</key>
-		<dict>
-			<key>from</key>
-			<string>E002BA8A-8B78-42B7-8902-596A57869103 - E002BA8A-8B78-42B7-8902-596A57869103</string>
-			<key>to</key>
-			<string>920C1D0D-CBF5-440F-831F-B60343CF6ADA - 920C1D0D-CBF5-440F-831F-B60343CF6ADA</string>
-		</dict>
-		<key>A3CD2AAF-B064-4499-8636-4A504383466F</key>
-		<dict>
-			<key>from</key>
-			<string>65D7C485-6A01-4F33-9B25-A6E0E0104CD4 - 65D7C485-6A01-4F33-9B25-A6E0E0104CD4</string>
-			<key>to</key>
-			<string>E002BA8A-8B78-42B7-8902-596A57869103 - E002BA8A-8B78-42B7-8902-596A57869103</string>
-		</dict>
-		<key>D73A7185-E7D4-4A77-895A-B0D54695BF6B</key>
+		<key>ED83E519-1863-4158-BE0F-F24A66789EE2</key>
 		<dict>
 			<key>from</key>
 			<string>D8A6A573-B161-4C37-B957-F990E703D3B8 - D8A6A573-B161-4C37-B957-F990E703D3B8</string>
 			<key>to</key>
-			<string>65D7C485-6A01-4F33-9B25-A6E0E0104CD4 - 65D7C485-6A01-4F33-9B25-A6E0E0104CD4</string>
+			<string>EF69FDC6-1055-4D81-B850-E50B292404F6 - EF69FDC6-1055-4D81-B850-E50B292404F6</string>
+		</dict>
+		<key>EF616A0A-D61E-477F-83E8-5B0DB4397FB4</key>
+		<dict>
+			<key>from</key>
+			<string>E002BA8A-8B78-42B7-8902-596A57869103 - E002BA8A-8B78-42B7-8902-596A57869103</string>
+			<key>to</key>
+			<string>920C1D0D-CBF5-440F-831F-B60343CF6ADA - 920C1D0D-CBF5-440F-831F-B60343CF6ADA</string>
 		</dict>
 	</dict>
 	<key>variables</key>
 	<array>
-		<dict>
-			<key>UUID</key>
-			<string>5BB0DAED-1FA2-4E3F-A4E7-5C37F83BAF78</string>
-			<key>identifier</key>
-			<string>com.apple.Automator.Variable.Path</string>
-			<key>name</key>
-			<string>Path</string>
-			<key>value</key>
-			<string>/Users/bogdanvitoc/Dropbox/School/2017-present Olin/QEA/RobotsN1/report</string>
-		</dict>
 		<dict>
 			<key>UUID</key>
 			<string>3891EE05-D4D9-4628-AF61-319BF88FCD48</string>
@@ -852,6 +818,16 @@
 			<string>com.apple.Automator.Variable.Storage</string>
 			<key>name</key>
 			<string>Images</string>
+		</dict>
+		<dict>
+			<key>UUID</key>
+			<string>EAB923C6-4B3D-4473-B597-53599DF6C7B5</string>
+			<key>identifier</key>
+			<string>com.apple.Automator.Variable.Path</string>
+			<key>name</key>
+			<string>Path</string>
+			<key>value</key>
+			<string>~/Desktop</string>
 		</dict>
 	</array>
 	<key>workflowMetaData</key>

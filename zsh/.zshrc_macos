@@ -112,6 +112,13 @@ latexnew() {
 	fi
 }
 
+# Sticky SSH: retry until nonzero exit code
+# from: http://backreference.org/2013/04/26/ssh-auto-reconnect/
+sssh(){
+  # try to connect every 0.5 secs (modulo timeouts)
+  while true; do command ssh "$@"; [ $? -eq 0 ] && break || sleep 0.5; done
+}
+
 
 # iTerm2
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
