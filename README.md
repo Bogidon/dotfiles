@@ -9,3 +9,5 @@ To use:
 - restart your terminal
 
 Pretty colors! Many goodies!
+
+> Current Homebrew packages can be saved every now and then with `brew bundle dump --global --force`
