@@ -14,9 +14,10 @@ dotfile_configure() {
 		fi
 
 		# Install from Brewfile
-		yes | brew bundle --file="$HOME/Brewfile"
+		ln -s -f $HOME/.dotfiles/assets/.Brewfile $HOME 
+		yes | brew bundle install --global
 
-		# .macos
+		# Configure macOS settings
 		../macos/.macos
 		
 	} ; install_dependencies

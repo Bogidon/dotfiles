@@ -6,15 +6,5 @@ ln -s -f $HOME/.dotfiles/vim/.vimrc $HOME
 ln -s -f $HOME/.dotfiles/tmux/gpakosz_tmux/.tmux.conf $HOME
 ln -s -f $HOME/.dotfiles/tmux/.tmux.conf.local $HOME
 
-case "$(uname -s)" in
-    Linux*)     ;;
-    Darwin*)    
-		ln -s -f $HOME/.dotfiles/assets/Brewfile $HOME 
-		;;
-    CYGWIN*)    echo "Your OS isn't supported by Bogdan's dotfiles.";;
-    MINGW*)     echo "Your OS isn't supported by Bogdan's dotfiles.";;
-    *)          echo "Your OS is not recognized by Bogdan's dotfiles.";;
-esac
-
 # .gitconfig is not yet deterministic
 # ln -s $HOME/.dotfiles/git/.gitconfig $HOME

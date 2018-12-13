@@ -1,5 +1,0 @@
-# Linux VM initially created for Olin's IARC club
-
-## ROS Kinetic Kame
-source /opt/ros/kinetic/setup.zsh
-
