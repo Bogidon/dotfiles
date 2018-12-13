@@ -1,0 +1,18 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+  config.ssh.forward_x11 = true
+  config.ssh.forward_agent = true
+  config.ssh.extra_args = "-X"
+  config.vm.box = "bento/ubuntu-16.04"
+  config.vm.network :forwarded_port, guest: 4000, host: 4567, auto_correct: true
+  config.vm.provision "shell", path: "bootstrap-code-box.sh", binary: true, privileged: false
+  config.vm.network "public_network"
+  config.vm.synced_folder "~/Code/", "/code"
+  config.vm.provider "virtualbox" do |vb|
+    vb.name = "codecamp"
+    vb.memory = 4096
+    vb.cpus = 4
+  end
+end
