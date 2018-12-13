@@ -14,7 +14,7 @@ dotfile_configure() {
 		fi
 
 		# Install from Brewfile
-		ln -s -f $HOME/.dotfiles/assets/.Brewfile $HOME 
+		ln -s -f $HOME/.dotfiles/homebrew/.Brewfile $HOME 
 		yes | brew bundle install --global
 
 		# Configure macOS settings
