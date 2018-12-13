@@ -1,7 +1,7 @@
 ZSH_CUSTOM="$HOME/.dotfiles/zsh/oh-my-zsh-custom"
 
 # plugins
-plugins=(git git-open thefuck sublime git-extras postgres zsh-syntax-highlighting gradle docker)
+plugins=(git git-open git-extras sublime postgres zsh-syntax-highlighting gradle docker)
 
 # Source OS-specific .zshrc
 source "$DOTFILES/zsh/.zshrc_$BOGDAN_OSID"
