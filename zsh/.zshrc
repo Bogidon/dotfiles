@@ -7,12 +7,8 @@ plugins=(git git-open git-extras sublime postgres zsh-syntax-highlighting gradle
 source "$DOTFILES/zsh/.zshrc_$BOGDAN_OSID"
 
 # Per-machine dotfiles (optional, in ~/.zsh_custom_machines)
-if [[ -f "$HOME/.zsh_custom_machines" ]]; then
-	source "$HOME/.zsh_custom_machines"
-
-	for machine in $ZSH_CUSTOM_MACHINES; do
-		source $DOTFILES"/zsh/.zshrc_"$BOGDAN_OSID"_"$machine
-	done
+if [[ -f "$HOME/.zsh_localrc" ]]; then
+	source "$HOME/.zsh_localrc"
 fi
 
 # theme
