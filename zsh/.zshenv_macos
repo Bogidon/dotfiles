@@ -1,17 +1,33 @@
 export SSH_KEY_PATH="~/.ssh/id_rsa"
 export ANDROID_HOME="$HOME/Library/Android/sdk"
 export ANDROID_NDK="$HOME/Library/Android/ndk"
-export GEM_HOME="$HOME/.gem"
+export LDFLAGS="-L/usr/local/opt/openssl/lib"
+export CPPFLAGS="-I/usr/local/opt/openssl/include"
+export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig"
+export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/opt/openssl/lib/
 
-export PATH="$PATH:$HOME/.dotfiles/bin"
-export PATH="$PATH:$HOME/.yarn/bin"
-export PATH="$PATH:/usr/local/sbin"
-export PATH="$PATH:$HOME/.cargo/bin"
-export PATH="$PATH:$ANDROID_HOME/tools"
-export PATH="$PATH:$ANDROID_HOME/platform-tools"
-export PATH="$PATH:$GEM_HOME/ruby/2.0.0/bin"
-export PATH="$PATH:$HOME/.rbenv/bin"
-export PATH="$PATH:$HOME/.rbenv/shims"
-export PATH="$PATH:/usr/local/anaconda3/bin"
-export PATH="$PATH:/Applications/VMware OVF Tool"
-export PATH="$PATH:/usr/local/opt/mysql@5.6/bin"
+# Build
+export BOG_PATH=$(echo "
+/usr/local/bin
+:/usr/local/sbin
+:/usr/bin
+:/bin
+:/usr/sbin
+:/sbin
+:/usr/local/opt/openssl/bin
+:/usr/local/opt/mysql@5.6/bin
+:$HOME/.dotfiles/zsh/oh-my-zsh-custom/plugins/git-open
+:$HOME/.rbenv/shims
+:$HOME/.rbenv/bin
+:$HOME/.dotfiles/bin
+:$HOME/.avn/bin
+:$HOME/.yarn/bin
+:$ANDROID_HOME/tools
+:$HOME/.cargo/bin
+:$ANDROID_HOME/platform-tools
+:/Applications/VMware OVF Tool
+:/opt/X11/bin
+" | tr -d '\n') # remove newlines
+
+# So .zshrc can use commands
+export PATH="$BOG_PATH"

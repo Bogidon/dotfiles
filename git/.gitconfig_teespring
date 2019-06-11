@@ -10,6 +10,7 @@
 [user]
 	name = Bogdan Vitoc
 	email = bogdan.vitoc@teespring.com
+	signingkey = C37BC07A4475DA60
 [credential]
     helper = osxkeychain
 [credential "https://github.com"]
@@ -42,6 +43,13 @@
 [mergetool "Kaleidoscope"]
 	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
 	trustexitcode = true
+
+# ignore/unignore changes to files
+[alias]
+  hide = update-index --skip-worktree
+  unhide = update-index --no-skip-worktree
+  unhide-all = ! git hidden | xargs git update-index --no-skip-worktree
+  hidden = ! git ls-files -v | grep '^S' | cut -c3-
 
 # so much color
 [color]

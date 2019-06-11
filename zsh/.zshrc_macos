@@ -1,5 +1,4 @@
 dotfile_configure() {
-
 	install_dependencies() {
 		# Change default shell to zsh
 		chsh -s /bin/zsh
@@ -124,8 +123,14 @@ sssh(){
 # iTerm2
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-# macOS path management (idk how this got here)
-eval $(/usr/libexec/path_helper -s)
+# macOS path management
+# see: https://scriptingosx.com/2017/05/where-paths-come-from/
+# 
+# eval $(/usr/libexec/path_helper -s)
+
+# I don't want nobody (except what's below) fuckin with my path
+# (intentionally disable the default way paths are installed on OS's)
+export PATH="$BOG_PATH"
 
 # Language Version Managers
 
