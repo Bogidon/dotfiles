@@ -11,3 +11,5 @@ To use:
 Pretty colors! Many goodies!
 
 > Current Homebrew packages can be saved every now and then with `brew bundle dump --global --force`
+
+> You can create a machine-specific zshrc file as `~/.zshrc_local`
