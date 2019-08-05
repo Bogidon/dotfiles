@@ -3,8 +3,6 @@
 [core]
 	excludesfile = /Users/bogdanvitoc/.gitignore_global
 	pager = diff-so-fancy | less --tabs=4 -RFX
-[commit]
-	template = /Users/bogdanvitoc/.stCommitMsg
 
 # user
 [user]
@@ -46,10 +44,17 @@
 
 # ignore/unignore changes to files
 [alias]
-  hide = update-index --skip-worktree
-  unhide = update-index --no-skip-worktree
-  unhide-all = ! git hidden | xargs git update-index --no-skip-worktree
-  hidden = ! git ls-files -v | grep '^S' | cut -c3-
+	hide = update-index --skip-worktree
+	unhide = update-index --no-skip-worktree
+	unhide-all = ! git hidden | xargs git update-index --no-skip-worktree
+	hidden = ! git ls-files -v | grep '^S' | cut -c3-
+
+# interactive rebase up to the point at which your current head branched from <rev>
+[alias]
+	tofork = "!f() { git rebase -i $(git merge-base --fork-point \"$1\"); }; f"
+
+[alias]
+	delallbut = "!f() { git branch | grep -v \"$1\" | rev | cut -c 4- | rev | xargs -L 1 git branch -D; }; f"
 
 # so much color
 [color]
