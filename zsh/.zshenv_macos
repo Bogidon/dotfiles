@@ -1,8 +1,8 @@
 export SSH_KEY_PATH="~/.ssh/id_rsa"
 export ANDROID_HOME="$HOME/Library/Android/sdk"
 export ANDROID_NDK="$HOME/Library/Android/ndk"
-export LDFLAGS="-L/usr/local/opt/openssl/lib"
-export CPPFLAGS="-I/usr/local/opt/openssl/include"
+export LDFLAGS="-L/usr/local/opt/openssl/lib -L/usr/local/opt/libxml2/lib"
+export CPPFLAGS="-I/usr/local/opt/openssl/include -I/usr/local/opt/libxml2/include"
 export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig"
 export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/opt/openssl/lib/
 
