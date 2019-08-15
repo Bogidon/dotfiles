@@ -136,3 +136,6 @@ export PATH="$BOG_PATH"
 
 ## rbenv
 eval "$(rbenv init -)"
+
+## pyenv
+eval "$(pyenv init -)"
