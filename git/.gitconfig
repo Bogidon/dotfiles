@@ -1,0 +1,42 @@
+[include]
+	path = ~/.gitconfig_local
+
+[core]
+	excludesfile = ~/.gitignore_global
+	pager = diff-so-fancy | less --tabs=4 -RFX
+	editor = "'/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl' --wait"
+
+[user]
+	name = Bogdan Vitoc
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+
+[alias]
+	# ignore/unignore changes to files
+	hide = update-index --skip-worktree
+	unhide = update-index --no-skip-worktree
+	unhide-all = ! git hidden | xargs git update-index --no-skip-worktree
+	hidden = ! git ls-files -v | grep '^S' | cut -c3-
+	# interactive rebase up to the point at which your current head branched from <rev>
+	tofork = "!f() { git rebase -i $(git merge-base --fork-point \"$1\"); }; f"
+	# delete all but branch specified
+	delallbut = "!f() { git branch | grep -v \"$1\" | rev | cut -c 4- | rev | xargs -L 1 git branch -D; }; f"
+
+[color]
+	ui = always
+[color "diff"]
+	meta = yellow bold
+	commit = green bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = "red bold 52"
+	newNormal = "green bold"
+	newHighlight = "green bold 22"

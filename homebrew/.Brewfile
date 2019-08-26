@@ -1,4 +1,3 @@
-tap "facebook/fb"
 tap "heroku/brew"
 tap "homebrew/bundle"
 tap "homebrew/cask"
@@ -66,14 +65,12 @@ brew "zsh"
 cask "1password-cli"
 cask "adium"
 cask "adobe-creative-cloud"
-cask "adobe-digital-editions"
 cask "airserver"
 cask "alfred"
 cask "angry-ip-scanner"
 cask "appcleaner"
 cask "arduino"
-cask "bitbar"
-cask "calibre"
+cask "charles"
 cask "chromedriver"
 cask "cryptomator"
 cask "cyberduck"
@@ -83,21 +80,19 @@ cask "divvy"
 cask "docker"
 cask "dropbox"
 cask "electrum"
+cask "evernote"
 cask "figma"
 cask "fiji"
 cask "firefox"
-cask "gephi"
 cask "google-backup-and-sync"
 cask "handbrake"
 cask "harvest"
 cask "inkscape"
 cask "insomnia"
-cask "interface-inspector"
 cask "iterm2"
 cask "licecap"
 cask "logdna-cli"
 cask "mactex"
-cask "marble"
 cask "monodraw"
 cask "ngrok"
 cask "notion"
@@ -113,7 +108,6 @@ cask "sublime-merge"
 cask "sublime-text"
 cask "teamviewer"
 cask "textmate"
-cask "thebrain"
 cask "tor-browser"
 cask "transmission"
 cask "tunnelblick"
@@ -122,17 +116,12 @@ cask "vlc"
 cask "wine-stable"
 cask "xquartz"
 cask "zeplin"
-mas "BetterSnapTool", id: 417375580
-mas "Clear", id: 504544917
 mas "DaisyDisk", id: 411643860
-mas "EFQRCode", id: 1306793539
 mas "Fantastical", id: 975937182
 mas "GIF Brewery 3", id: 1081413713
 mas "Helium", id: 1054607607
 mas "LittleIpsum", id: 405772121
 mas "Microsoft OneNote", id: 784801555
-mas "Numbers", id: 409203825
-mas "Okta Extension App", id: 1439967473
 mas "Paste", id: 967805235
 mas "QuickSketch", id: 1079970088
 mas "Shazam", id: 897118787

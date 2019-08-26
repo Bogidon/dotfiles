@@ -1,33 +1,3 @@
-dotfile_configure() {
-	install_dependencies() {
-		# Change default shell to zsh
-		chsh -s /bin/zsh
-
-		which -s brew
-		if [[ $? != 0 ]] ; then
-		    # Install Homebrew
-		    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-		else
-			# Update Homebrew
-		    brew update
-		fi
-
-		# Install from Brewfile
-		ln -s -f $HOME/.dotfiles/homebrew/.Brewfile $HOME 
-		yes | brew bundle install --global
-
-		# Configure macOS settings
-		../macos/.macos
-		
-	} ; install_dependencies
-
-	move_assets() {
-		# TODO
-	} ; move_assets
-
-	echo "Configuration complete."
-}
-
 # shell envs
 EDITOR=st
 

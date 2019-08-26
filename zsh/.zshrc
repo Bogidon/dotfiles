@@ -6,9 +6,9 @@ plugins=(git git-open git-extras sublime postgres zsh-syntax-highlighting gradle
 # Source OS-specific .zshrc
 source "$DOTFILES/zsh/.zshrc_$BOGDAN_OSID"
 
-# Per-machine dotfiles (optional, in ~/.zsh_custom_machines)
-if [[ -f "$HOME/.zsh_localrc" ]]; then
-	source "$HOME/.zsh_localrc"
+# Machine specific dotfile
+if [[ -f "$HOME/.zshrc_local" ]]; then
+	source "$HOME/.zshrc_local"
 fi
 
 # theme
@@ -23,10 +23,6 @@ BULLETTRAIN_GIT_MODIFIED=" "
 BULLETTRAIN_GIT_RENAMED=" "
 BULLETTRAIN_GIT_UNTRACKED=" "
 
-# completion system
-autoload -U compinit
-compinit -u
-
 # keys
 bindkey '^_' undo # undo completion with ctrl + _
 
@@ -35,6 +31,11 @@ setopt extended_glob
 
 # source oh-my-zsh
 source $ZSH/oh-my-zsh.sh
+
+# completion system
+autoload -U compinit
+compinit -u
+_comp_options+=(globdots) # show hidden files and folders
 
 # exclude items from completion
 zstyle ':completion:*' ignored-patterns '__nvmrc_loader|__nvm_forward'
