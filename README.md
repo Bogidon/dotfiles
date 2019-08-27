@@ -3,7 +3,6 @@ These are my dotfiles. They work on macOS and Ubuntu
 To use:
 - clone this repo to `~/.dotfiles`
 - run `dotfile_configure.sh`
-- run the symlinking script: `./symlink`
 - restart your terminal
 
 Pretty colors! Many goodies!

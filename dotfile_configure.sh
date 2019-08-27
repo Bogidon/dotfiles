@@ -1,4 +1,27 @@
 # 
+# General
+# 
+configure() {
+  echo "Symlink (general)"
+  symlink() {
+    ln -s -f $HOME/.dotfiles/zsh/.zshrc $HOME
+    ln -s -f $HOME/.dotfiles/zsh/.zshenv $HOME
+    ln -s -f $HOME/.dotfiles/git/.gitconfig $HOME
+    ln -s -f $HOME/.dotfiles/vim/.vimrc $HOME
+    ln -s -f $HOME/.dotfiles/tmux/gpakosz_tmux/.tmux.conf $HOME
+    ln -s -f $HOME/.dotfiles/tmux/.tmux.conf.local $HOME
+    ln -s -f $HOME/.dotfiles/npm/.npmrc $HOME
+  } ; symlink
+
+  case "$BOGDAN_OSID" in
+    linux*)     configure_linux;;
+    macos*)     configure_macos;;
+  esac
+
+  echo "√√ Configuration complete √√"
+}
+
+# 
 # Linux
 # 
 configure_linux() {
@@ -82,6 +105,8 @@ configure_linux() {
 # macOS
 # 
 configure_macos() {
+  echo "Configure for macOS..."
+
   echo "== Configure Settings =="
   configure_settings() {
     echo "Configure macOS settings"
@@ -108,26 +133,31 @@ configure_macos() {
     echo "Install from Brewfile"
     ln -s -f $HOME/.dotfiles/homebrew/.Brewfile $HOME 
     yes | brew bundle install --global
+
+    echo "Install GVM"
+    curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer | sh
   } ; install_dependencies
 
   echo "== Change default shell to zsh =="
   change_shell() {
-    chsh -s /bin/zsh
+    # append homebrew zsh to /etc/shells
+    LINE='/usr/local/bin/zsh'
+    sudo grep -xq $LINE /etc/shells || echo $LINE | sudo tee -a /etc/shells
+    chsh -s /usr/local/bin/zsh
   } ; change_shell
+
+  echo "== Configure iTerm =="
+  configure_iterm() {
+    curl -L https://iterm2.com/shell_integration/install_shell_integration_and_utilities.sh | bash
+  } ; configure_iterm
 
   echo "== Move assets =="
   move_assets() {
     cp "$DOTFILES/assets/Meslo LG M DZ Regular for Powerline.otf" "$HOME/Library/Fonts"
   } ; move_assets
-
-  echo "√√ Configuration complete √√"
 } ;
 
 # 
 # -- execute --
 # 
-source "./zsh/.zshenv"
-case "$BOGDAN_OSID" in
-    linux*)     configure_linux;;
-    macos*)     configure_macos;;
-esac
+./zsh/.zshenv && configure

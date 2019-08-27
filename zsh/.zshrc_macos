@@ -89,7 +89,6 @@ sssh(){
   while true; do command ssh "$@"; [ $? -eq 0 ] && break || sleep 0.5; done
 }
 
-
 # iTerm2
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
@@ -104,8 +103,11 @@ export PATH="$BOG_PATH"
 
 # Language Version Managers
 
-## rbenv
+## rbenv (Ruby)
 eval "$(rbenv init -)"
 
-## pyenv
+## pyenv (Python)
 eval "$(pyenv init -)"
+
+## gvm (Go)
+test -e "${HOME}/.gvm/scripts/gvm" && source "${HOME}/.gvm/scripts/gvm"
