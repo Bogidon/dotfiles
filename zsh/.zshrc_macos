@@ -7,6 +7,7 @@ plugins+=(osx xcode)
 # aliases
 alias emustart='$(which emulator) -avd $(emulator -avd -list-avds | head -n 1)'
 alias jn='jupyter notebook'
+alias sm='smerge'
 
 # Vagrant command that allows easy manipulation of VMs regardless of current dir
 # (and allows for commands to be applied to all VMs)
