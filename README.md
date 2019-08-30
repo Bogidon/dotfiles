@@ -11,4 +11,5 @@ Pretty colors! Many goodies!
 
 You can create a per-machine configs with the following files: 
 - `~/.zshrc_local`
+- `~/.zshenv_local`
 - `~/.gitconfig_local`

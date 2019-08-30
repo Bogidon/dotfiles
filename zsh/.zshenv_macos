@@ -1,15 +1,18 @@
-export SSH_KEY_PATH="~/.ssh/id_rsa"
+export SSH_KEY_PATH="$HOME/.ssh/id_rsa"
 export ANDROID_HOME="$HOME/Library/Android/sdk"
 export ANDROID_NDK="$HOME/Library/Android/ndk"
 export LDFLAGS="-L/usr/local/opt/openssl/lib -L/usr/local/opt/libxml2/lib"
 export CPPFLAGS="-I/usr/local/opt/openssl/include -I/usr/local/opt/libxml2/include"
 export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig"
 export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/opt/openssl/lib/
-export PYENV_ROOT="/Users/bogdanvitoc/.pyenv/"
+export PYENV_ROOT="$HOME/.pyenv/"
+export GOROOT="$HOME/.gvm/gos/go1.12.9"
+export GOPATH="$HOME/.gvm/pkgsets/go1.12.9/global"
 
 # Build
 export BOG_PATH=$(echo "
-/usr/local/bin
+$BOG_PATH
+:/usr/local/bin
 :/usr/local/sbin
 :/usr/bin
 :/bin
@@ -32,3 +35,7 @@ export BOG_PATH=$(echo "
 
 # So .zshrc can use commands
 export PATH="$BOG_PATH"
+
+# For non-interactive environments, where .zshrc will not be run
+# (.zshrc will reset path to BOG_PATH)
+export PATH="$PATH:/Users/bogdanvitoc/.gvm/gos/go1.12.9/bin"
