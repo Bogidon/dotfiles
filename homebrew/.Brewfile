@@ -117,6 +117,7 @@ cask "vlc"
 cask "wine-stable"
 cask "xquartz"
 cask "zeplin"
+cask "zoom"
 mas "DaisyDisk", id: 411643860
 mas "Fantastical", id: 975937182
 mas "GIF Brewery 3", id: 1081413713
