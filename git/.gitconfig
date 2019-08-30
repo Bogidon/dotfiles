@@ -20,7 +20,7 @@
 	hide = update-index --skip-worktree
 	unhide = update-index --no-skip-worktree
 	unhide-all = ! git hidden | xargs git update-index --no-skip-worktree
-	hidden = ! git ls-files -v | grep '^S' | cut -c3-
+	hidden = ! git ls-files -v | grep '^S' | cut -c3- | sed 's/^/\"/' | sed 's/$/\"/'
 	# interactive rebase up to the point at which your current head branched from <rev>
 	tofork = "!f() { git rebase -i $(git merge-base --fork-point \"$1\"); }; f"
 	# delete all but branch specified
