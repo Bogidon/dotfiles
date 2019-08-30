@@ -141,8 +141,9 @@ configure_macos() {
   echo "== Change default shell to zsh =="
   change_shell() {
     # append homebrew zsh to /etc/shells
-    LINE='/usr/local/bin/zsh'
-    sudo grep -xq $LINE /etc/shells || echo $LINE | sudo tee -a /etc/shells
+    ZSHPATH='/usr/local/bin/zsh'
+    sudo grep -xq $ZSHPATH /etc/shells || echo $ZSHPATH | sudo tee -a /etc/shells
+    ln -s -f $ZSHPATH /bin/zsh
     chsh -s /usr/local/bin/zsh
   } ; change_shell
 
