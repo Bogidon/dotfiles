@@ -25,6 +25,8 @@
 	tofork = "!f() { git rebase -i $(git merge-base --fork-point \"$1\"); }; f"
 	# delete all but branch specified
 	delallbut = "!f() { git branch | grep -v \"$1\" | rev | cut -c 4- | rev | xargs -L 1 git branch -D; }; f"
+	# pretty log
+	lgm = log --graph --all --pretty=medium --decorate=short
 
 [color]
 	ui = always
