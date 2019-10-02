@@ -1,29 +1,6 @@
-# 
-# General
-# 
-configure() {
-  echo "Symlink (general)"
-  symlink() {
-    ln -s -f $HOME/.dotfiles/zsh/.zshrc $HOME
-    ln -s -f $HOME/.dotfiles/zsh/.zshenv $HOME
-    ln -s -f $HOME/.dotfiles/git/.gitconfig $HOME
-    ln -s -f $HOME/.dotfiles/vim/.vimrc $HOME
-    ln -s -f $HOME/.dotfiles/tmux/gpakosz_tmux/.tmux.conf $HOME
-    ln -s -f $HOME/.dotfiles/tmux/.tmux.conf.local $HOME
-    ln -s -f $HOME/.dotfiles/npm/.npmrc $HOME
-  } ; symlink
-
-  case "$BOGDAN_OSID" in
-    linux*)     configure_linux;;
-    macos*)     configure_macos;;
-  esac
-
-  echo "√√ Configuration complete √√"
-}
-
-# 
+#
 # Linux
-# 
+#
 configure_linux() {
   install_dependencies() {
     yes | sudo apt-get install \
@@ -101,9 +78,9 @@ configure_linux() {
   echo "Configuration complete. Please restart your terminal session."
 } ;
 
-# 
+#
 # macOS
-# 
+#
 configure_macos() {
   echo "Configure for macOS..."
 
@@ -124,6 +101,7 @@ configure_macos() {
         brew update
     fi
 
+    brew install mas
     mas account
     if [[ $? != 0 ]] ; then
       echo "Please sign in to the App Store"
@@ -131,11 +109,14 @@ configure_macos() {
     fi
 
     echo "Install from Brewfile"
-    ln -s -f $HOME/.dotfiles/homebrew/.Brewfile $HOME 
+    ln -s -f $HOME/.dotfiles/homebrew/.Brewfile $HOME
     yes | brew bundle install --global
 
     echo "Install GVM"
     curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer | sh
+
+    echo "Install nvm"
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | sh
   } ; install_dependencies
 
   echo "== Change default shell to zsh =="
@@ -149,7 +130,7 @@ configure_macos() {
 
   echo "== Configure iTerm =="
   configure_iterm() {
-    curl -L https://iterm2.com/shell_integration/install_shell_integration_and_utilities.sh | bash
+    curl -L https://iterm2.com/shell_integration/zsh -o "$HOME/.iterm2_shell_integration.zsh"
   } ; configure_iterm
 
   echo "== Move assets =="
@@ -158,7 +139,32 @@ configure_macos() {
   } ; move_assets
 } ;
 
-# 
+#
+# General
+#
+configure() {
+  echo "Symlink (general)"
+  symlink() {
+    ln -s -f $HOME/.dotfiles/zsh/.zshrc $HOME
+    ln -s -f $HOME/.dotfiles/zsh/.zshenv $HOME
+    ln -s -f $HOME/.dotfiles/git/.gitconfig $HOME
+    ln -s -f $HOME/.dotfiles/git/.gitignore_global $HOME
+    ln -s -f $HOME/.dotfiles/vim/.vimrc $HOME
+    ln -s -f $HOME/.dotfiles/tmux/gpakosz_tmux/.tmux.conf $HOME
+    ln -s -f $HOME/.dotfiles/tmux/.tmux.conf.local $HOME
+    ln -s -f $HOME/.dotfiles/npm/.npmrc $HOME
+  } ; symlink
+
+  echo "osid: $BOGDAN_OSID"
+  case "$BOGDAN_OSID" in
+    linux*)     configure_linux;;
+    macos*)     configure_macos;;
+  esac
+
+  echo "√√ Configuration complete √√"
+}
+
+#
 # -- execute --
-# 
-./zsh/.zshenv && configure
+#
+source ./zsh/.zshenv && configure

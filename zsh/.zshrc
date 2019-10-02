@@ -3,14 +3,6 @@ ZSH_CUSTOM="$HOME/.dotfiles/zsh/oh-my-zsh-custom"
 # plugins
 plugins=(git git-open git-extras sublime postgres zsh-syntax-highlighting gradle docker)
 
-# Source OS-specific .zshrc
-source "$DOTFILES/zsh/.zshrc_$BOGDAN_OSID"
-
-# Machine specific dotfile
-if [[ -f "$HOME/.zshrc_local" ]]; then
-	source "$HOME/.zshrc_local"
-fi
-
 # theme
 ZSH_THEME="bullet-train"
 BULLETTRAIN_PROMPT_ORDER=(
@@ -49,3 +41,11 @@ zstyle ':completion:*' ignored-patterns '__nvmrc_loader|__nvm_forward'
 # tabtab source for slss package
 # uninstall by removing these lines or running `tabtab uninstall slss`
 [[ -f /Users/bogdanvitoc/Code/core-api/node_modules/tabtab/.completions/slss.zsh ]] && . /Users/bogdanvitoc/Code/core-api/node_modules/tabtab/.completions/slss.zsh
+
+# Source OS-specific .zshrc
+source "$DOTFILES/zsh/.zshrc_$BOGDAN_OSID"
+
+# Machine specific dotfile
+if [[ -f "$HOME/.zshrc_local" ]]; then
+	source "$HOME/.zshrc_local"
+fi
