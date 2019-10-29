@@ -4,7 +4,8 @@
 [core]
 	excludesfile = ~/.gitignore_global
 	pager = diff-so-fancy | less --tabs=4 -RFX
-	editor = "'/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl' --wait"
+	# you might want to do this locally:
+	# editor = "'/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl' --wait"
 
 [user]
 	name = Bogdan Vitoc

@@ -3,13 +3,16 @@
 #
 configure_linux() {
   install_dependencies() {
-    yes | sudo apt-get install \
+    sudo apt-get install -y \
       ttf-ancient-fonts \
       dconf-cli \
       python-pip \
       python3 \
       python3-pip \
       vim
+
+    echo "Install NVM"
+    curl -o- "https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.0/install.sh" | sh
 
     sudo pip install --upgrade pip
     sudo pip3 install --upgrade pip
@@ -167,5 +170,4 @@ configure() {
 
 #
 # -- execute --
-#
 source ./zsh/.zshenv && configure
