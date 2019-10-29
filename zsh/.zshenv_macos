@@ -46,4 +46,4 @@ export PATH="$BOG_PATH"
 # For non-interactive environments, where .zshrc will not be run
 # (.zshrc will reset path to BOG_PATH)
 export PATH="$PATH:$HOME/.gvm/gos/go1.12.9/bin"
-export PATH="$PATH:$HOME/.nvm/versions/node/v12.10.0/bin"
+export PATH="$PATH:$HOME/.nvm/versions/node/v12.10.0/bin" # it helps to create an nvm alias named "sublime"

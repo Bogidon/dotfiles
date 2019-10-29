@@ -153,6 +153,7 @@ configure() {
     ln -s -f $HOME/.dotfiles/tmux/gpakosz_tmux/.tmux.conf $HOME
     ln -s -f $HOME/.dotfiles/tmux/.tmux.conf.local $HOME
     ln -s -f $HOME/.dotfiles/npm/.npmrc $HOME
+    ln -s -f $HOME/.dotfiles/eslint/.eslintrc $HOME
   } ; symlink
 
   echo "osid: $BOGDAN_OSID"
