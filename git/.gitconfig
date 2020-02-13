@@ -9,7 +9,6 @@
 
 [user]
 	name = Bogdan Vitoc
-	signingkey = ***REMOVED***
 
 [alias]
 	# ignore/unignore changes to files
