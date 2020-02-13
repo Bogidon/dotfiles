@@ -105,6 +105,7 @@ defaults write com.apple.dock expose-group-apps -bool true
 defaults write com.apple.dock mru-spaces -bool false # Don’t automatically rearrange Spaces based on most recent use
 defaults write com.apple.dock tilesize -int 50 # Set the icon size of Dock items to 36 pixels
 defaults write com.apple.dock orientation -string "right"
+defaults write com.apple.Dock autohide-delay -float 0
 
 defaults write com.apple.Safari ShowFullURLInSmartSearchField -bool true
 defaults write com.apple.Safari HomePage -string "about:blank"

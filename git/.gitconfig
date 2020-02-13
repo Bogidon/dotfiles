@@ -9,12 +9,7 @@
 
 [user]
 	name = Bogdan Vitoc
-
-[filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+	signingkey = ***REMOVED***
 
 [alias]
 	# ignore/unignore changes to files
