@@ -10,6 +10,7 @@ export PYENV_ROOT="$HOME/.pyenv/"
 export GOROOT="$HOME/.gvm/gos/go1.13.7"
 export GOPATH="$HOME/.gvm/pkgsets/go1.13.7/global"
 export NVM_DIR="$HOME/.nvm"
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home"
 
 # Build
 export BOG_PATH=$(echo "
@@ -17,6 +18,7 @@ $BOG_PATH
 :/usr/local/opt/openssl/bin
 :/usr/local/bin
 :/usr/local/sbin
+:/usr/local/share/dotnet
 :/usr/bin
 :/bin
 :/usr/sbin

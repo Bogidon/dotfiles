@@ -10,6 +10,9 @@
 [user]
 	name = Bogdan Vitoc
 
+[advice]
+	detachedHead = false
+
 [alias]
 	# ignore/unignore changes to files
 	hide = update-index --skip-worktree
