@@ -1,6 +1,6 @@
 export SSH_KEY_PATH="$HOME/.ssh/id_rsa"
 export ANDROID_HOME="$HOME/Library/Android/sdk"
-export ANDROID_NDK="$HOME/Library/Android/android-ndk-r16b"
+export ANDROID_NDK_HOME="$HOME/Library/Android/android-ndk-r16b"
 export GRADLE_USER_HOME="$HOME/.gradle"
 export LDFLAGS="-L/usr/local/opt/openssl/lib -L/usr/local/opt/libxml2/lib"
 export CPPFLAGS="-I/usr/local/opt/openssl/include -I/usr/local/opt/libxml2/include"
@@ -10,7 +10,7 @@ export PYENV_ROOT="$HOME/.pyenv/"
 export GOROOT="$HOME/.gvm/gos/go1.13.7"
 export GOPATH="$HOME/.gvm/pkgsets/go1.13.7/global"
 export NVM_DIR="$HOME/.nvm"
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home"
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home/jre"
 
 # Build
 export BOG_PATH=$(echo "
@@ -40,6 +40,7 @@ $BOG_PATH
 :$ANDROID_HOME/tools
 :$ANDROID_HOME/tools/bin
 :$ANDROID_HOME/platform-tools
+:$JAVA_HOME/bin
 " | tr -d '\n') # remove newlines
 
 
