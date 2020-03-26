@@ -21,8 +21,15 @@
 	hidden = ! git ls-files -v | grep '^S' | cut -c3- | sed 's/^/\"/' | sed 's/$/\"/'
 	# interactive rebase up to the point at which your current head branched from <rev>
 	tofork = "!f() { git rebase -i $(git merge-base --fork-point \"$1\"); }; f"
-	# delete all but branch specified
-	delallbut = "!f() { git branch | grep -v \"$1\" | rev | cut -c 4- | rev | xargs -L 1 git branch -D; }; f"
+	
+	# delete all but branches specified
+	# argument of form: "branch1|branch2|branch3"
+	delallbut = "!f() { git branch | egrep -v \"(\\b(master|dev|$1)\\b)\" | rev | cut -c 4- | rev | xargs -L 1 git branch -D; }; f"
+	
+	# delete all merged branches but those specified
+	# argument of form: "branch1|branch2|branch3"
+	delmergedbut = "!f() { git branch --no-color --merged | egrep -v \"(\\b(master|dev|$1)\\b)\" | xargs git branch -d; }; f"
+
 	# pretty log
 	lgm = log --graph --all --pretty=medium --decorate=short
 
