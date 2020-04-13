@@ -49,3 +49,6 @@ source "$DOTFILES/zsh/.zshrc_$BOGDAN_OSID"
 if [[ -f "$HOME/.zshrc_local" ]]; then
 	source "$HOME/.zshrc_local"
 fi
+
+# z - jump around
+. "$DOTFILES/lib/z/z.sh"

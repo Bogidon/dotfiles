@@ -19,3 +19,6 @@
 [submodule "templates/ModSimPy"]
 	path = templates/ModSimPy
 	url = git@github.com:AllenDowney/ModSimPy.git
+[submodule "lib/z"]
+	path = lib/z
+	url = git@github.com:rupa/z.git
