@@ -13,3 +13,10 @@ You can create a per-machine configs with the following files:
 - `~/.zshrc_local`
 - `~/.zshenv_local`
 - `~/.gitconfig_local`
+
+
+<details>
+<summary>Screenshot:</summary>
+
+<img width=600 src="https://i.imgur.com/dI48Fgo.png" alt="screenshot of terminal with powerline"/>
+</details>
