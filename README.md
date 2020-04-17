@@ -1,4 +1,4 @@
-These are my dotfiles. They work on macOS and Ubuntu
+These are my dotfiles. They work on macOS and Ubuntu. Steal what you like, leave what you don't, make your own!
 
 To use:
 - clone this repo to `~/.dotfiles`
