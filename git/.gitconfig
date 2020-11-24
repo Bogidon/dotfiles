@@ -1,5 +1,7 @@
-[include]
-	path = ~/.gitconfig_local
+[user]
+	name = Bogdan Vitoc
+	email = bog@bogdanvitoc.com
+	signingkey = BDF750412486DE3B
 
 [core]
 	excludesfile = ~/.gitignore_global
@@ -7,11 +9,8 @@
 	# you might want to do this locally:
 	# editor = "'/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl' --wait"
 
-[user]
-	name = Bogdan Vitoc
-
-[advice]
-	detachedHead = false
+[commit]
+	gpgsign = true
 
 [alias]
 	# ignore/unignore changes to files
@@ -35,6 +34,7 @@
 
 [color]
 	ui = always
+
 [color "diff"]
 	meta = yellow bold
 	commit = green bold
@@ -42,8 +42,16 @@
 	old = red bold
 	new = green bold
 	whitespace = red reverse
+	
 [color "diff-highlight"]
 	oldNormal = red bold
 	oldHighlight = "red bold 52"
 	newNormal = "green bold"
 	newHighlight = "green bold 22"
+
+[advice]
+	detachedHead = false
+
+
+[include]
+	path = ~/.gitconfig_local
