@@ -112,7 +112,7 @@ configure_macos() {
     fi
 
     echo "Install from Brewfile"
-    ln -s -f $HOME/.dotfiles/homebrew/.Brewfile $HOME
+    ln -s -f $DOTFILES/homebrew/.Brewfile $HOME
     yes | brew bundle install --global
 
     echo "Install GVM"
@@ -148,15 +148,15 @@ configure_macos() {
 configure() {
   echo "Symlink (general)"
   symlink() {
-    ln -s -f $HOME/.dotfiles/zsh/.zshrc $HOME
-    ln -s -f $HOME/.dotfiles/zsh/.zshenv $HOME
-    ln -s -f $HOME/.dotfiles/git/.gitconfig $HOME
-    ln -s -f $HOME/.dotfiles/git/.gitignore_global $HOME
-    ln -s -f $HOME/.dotfiles/vim/.vimrc $HOME
-    ln -s -f $HOME/.dotfiles/tmux/gpakosz_tmux/.tmux.conf $HOME
-    ln -s -f $HOME/.dotfiles/tmux/.tmux.conf.local $HOME
-    ln -s -f $HOME/.dotfiles/npm/.npmrc $HOME
-    ln -s -f $HOME/.dotfiles/eslint/.eslintrc $HOME
+    ln -s -f $DOTFILES/zsh/.zshrc $HOME
+    ln -s -f $DOTFILES/zsh/.zshenv $HOME
+    ln -s -f $DOTFILES/git/.gitconfig $HOME
+    ln -s -f $DOTFILES/git/.gitignore_global $HOME
+    ln -s -f $DOTFILES/vim/.vimrc $HOME
+    ln -s -f $DOTFILES/tmux/gpakosz_tmux/.tmux.conf $HOME
+    ln -s -f $DOTFILES/tmux/.tmux.conf.local $HOME
+    ln -s -f $DOTFILES/npm/.npmrc $HOME
+    ln -s -f $DOTFILES/eslint/.eslintrc $HOME
   } ; symlink
 
   echo "osid: $BOGDAN_OSID"

@@ -1,4 +1,4 @@
-ZSH_CUSTOM="$HOME/.dotfiles/zsh/oh-my-zsh-custom"
+ZSH_CUSTOM="$DOTFILES/zsh/oh-my-zsh-custom"
 
 # plugins
 plugins=(git git-open git-extras sublime postgres zsh-syntax-highlighting gradle docker)

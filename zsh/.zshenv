@@ -1,5 +1,5 @@
-export ZSH="$HOME/.dotfiles/zsh/oh-my-zsh"
 export DOTFILES="$HOME/.dotfiles"
+export ZSH="$DOTFILES/zsh/oh-my-zsh"
 export TERM="xterm-256color"
 
 if [[ -f "$HOME/.zshenv_local" ]]; then
