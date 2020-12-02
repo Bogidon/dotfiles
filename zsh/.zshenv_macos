@@ -24,11 +24,11 @@ $BOG_PATH
 :/usr/sbin
 :/sbin
 :/usr/local/opt/mysql@5.6/bin
+:$DOTFILES/scripts/macos
 :$DOTFILES/zsh/oh-my-zsh-custom/plugins/git-open
 :$HOME/.local/bin
 :$HOME/.rbenv/shims
 :$HOME/.rbenv/bin
-:$DOTFILES/bin
 :$HOME/.avn/bin
 :$HOME/.yarn/bin
 :$ANDROID_HOME/tools
