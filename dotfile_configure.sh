@@ -4,6 +4,7 @@
 configure_linux() {
   install_dependencies() {
     sudo apt-get install -y \
+      bat \
       ttf-ancient-fonts \
       dconf-cli \
       python-pip \

@@ -52,3 +52,6 @@ fi
 
 # z - jump around
 . "$DOTFILES/lib/z/z.sh"
+
+# bat - better cat
+export MANPAGER="sh -c 'col -bx | bat -l man -p'" # colorize man pages

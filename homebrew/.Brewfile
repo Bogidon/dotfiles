@@ -8,6 +8,7 @@ tap "homebrew/services"
 
 # brew (binaries)
 brew "awscli"
+brew "bat" # better cat 
 brew "bash-completion"
 brew "brotli"
 brew "bundletool"
