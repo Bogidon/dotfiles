@@ -22,6 +22,7 @@ brew "git-annex"
 brew "git-extras"
 brew "git-flow"
 brew "git-lfs"
+brew "less" # more recent
 brew "libtool"
 brew "htop"
 brew "jq"
