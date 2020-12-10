@@ -9,6 +9,7 @@ alias emustart='$(which emulator) -avd $(emulator -avd -list-avds | head -n 1)'
 alias jn='jupyter notebook'
 alias sm='smerge'
 alias vs='/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code'
+function zv() { vs $(_z -e "$1") } # z and open vs
 
 # Spatial
 rm_spatial () {
