@@ -1,3 +1,7 @@
+###############################################################################
+# ZSH                                                                         #
+###############################################################################
+
 ZSH_CUSTOM="$DOTFILES/zsh/oh-my-zsh-custom"
 
 # plugins
@@ -32,16 +36,6 @@ _comp_options+=(globdots) # show hidden files and folders
 # exclude items from completion
 zstyle ':completion:*' ignored-patterns '__nvmrc_loader|__nvm_forward'
 
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-[[ -f /Users/bogdanvitoc/Code/core-api/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/bogdanvitoc/Code/core-api/node_modules/tabtab/.completions/serverless.zsh
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-[[ -f /Users/bogdanvitoc/Code/core-api/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/bogdanvitoc/Code/core-api/node_modules/tabtab/.completions/sls.zsh
-# tabtab source for slss package
-# uninstall by removing these lines or running `tabtab uninstall slss`
-[[ -f /Users/bogdanvitoc/Code/core-api/node_modules/tabtab/.completions/slss.zsh ]] && . /Users/bogdanvitoc/Code/core-api/node_modules/tabtab/.completions/slss.zsh
-
 # Source OS-specific .zshrc
 source "$DOTFILES/zsh/.zshrc_$BOGDAN_OSID"
 
@@ -50,8 +44,12 @@ if [[ -f "$HOME/.zshrc_local" ]]; then
 	source "$HOME/.zshrc_local"
 fi
 
+###############################################################################
+# Other software                                                              #
+###############################################################################
+
 # z - jump around
-. "$DOTFILES/lib/z/z.sh"
+. "$DOTFILES/external/z_jump-around/z.sh"
 
 # bat - better cat
 export MANPAGER="sh -c 'col -bx | bat -l man -p'" # colorize man pages

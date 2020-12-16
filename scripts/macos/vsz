@@ -1,0 +1,4 @@
+#!/bin/zsh
+# Open VS through Z
+
+vs $(_z -e "$1")

@@ -1,1 +1,1 @@
-../../oh-my-zsh-custom-originals/bullet-train-oh-my-zsh-theme/bullet-train.zsh-theme
+../../../external/bullet-train-oh-my-zsh-theme/bullet-train.zsh-theme

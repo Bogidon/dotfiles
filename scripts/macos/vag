@@ -1,0 +1,32 @@
+#!/bin/zsh
+# Vagrant command that allows easy manipulation of VMs regardless of current dir
+# (and allows for commands to be applied to all VMs)
+
+if [ -z "$1" ] ; then
+    # show documentation 
+cat <<'EOL'
+vag - shortcut for controlling Vagrant
+--------------------------------------
+vag COMMAND [SEARCHSTR|all]
+
+COMMAND - vagrant command that accepts an id (e.g. halt, up, suspend)
+SEARCHSTR - used to grep result of `vagrant global-status` to find IDs
+all - apply to all VMs in `vagrant global-status`
+EOL
+else
+    if [ -z "$2" ] ; then
+        # run `vagrant $COMMAND`
+        vagrant $1
+    elif [ "$2" = "all" ] ; then
+        # run `vagrant $COMMAND` with each ID in global-status
+        ids=("${(@f)$(vagrant global-status | grep running | cut -c1-8)}")
+        for id in $ids; do
+            cmd="vagrant $1 $id"
+            echo "running... $cmd"
+            eval $cmd
+        done
+    else
+        # run `vagrant $COMMAND` with ID from provided name
+        vagrant $1 $(vagrant global-status | grep $2 | cut -c1-8)
+    fi
+fi

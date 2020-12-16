@@ -1,24 +1,24 @@
-[submodule "zsh/oh-my-zsh"]
-	path = zsh/oh-my-zsh
+[submodule "oh-my-zsh"]
+	path = external/oh-my-zsh
 	url = git@github.com:robbyrussell/oh-my-zsh.git
-[submodule "zsh/oh-my-zsh-custom-originals/bullet-train-oh-my-zsh-theme"]
-	path = zsh/oh-my-zsh-custom-originals/bullet-train-oh-my-zsh-theme
+[submodule "bullet-train-oh-my-zsh-theme"]
+	path = external/bullet-train-oh-my-zsh-theme
 	url = https://github.com/caiogondim/bullet-train-oh-my-zsh-theme.git
-[submodule "zsh/oh-my-zsh-custom-originals/git-open"]
-	path = zsh/oh-my-zsh-custom-originals/git-open
+[submodule "git-open"]
+	path = external/git-open
 	url = git@github.com:paulirish/git-open.git
-[submodule "zsh/oh-my-zsh-custom-originals/zsh-syntax-highlighting"]
-	path = zsh/oh-my-zsh-custom-originals/zsh-syntax-highlighting
+[submodule "zsh-syntax-highlighting"]
+	path = external/zsh-syntax-highlighting
 	url = git@github.com:zsh-users/zsh-syntax-highlighting.git
-[submodule "vim/amix_vimrc"]
-	path = vim/amix_vimrc
+[submodule "amix_vimrc"]
+	path = external/amix_vimrc
 	url = git@github.com:amix/vimrc.git
-[submodule "tmux/gpakosz_tmux"]
-	path = tmux/gpakosz_tmux
+[submodule "gpakosz_tmux"]
+	path = external/gpakosz_tmux
 	url = git@github.com:gpakosz/.tmux.git
-[submodule "templates/ModSimPy"]
-	path = templates/ModSimPy
+[submodule "ModSimPy"]
+	path = external/ModSimPy
 	url = git@github.com:AllenDowney/ModSimPy.git
-[submodule "lib/z"]
-	path = lib/z
+[submodule "z_jump-around"]
+	path = external/z_jump-around
 	url = git@github.com:rupa/z.git

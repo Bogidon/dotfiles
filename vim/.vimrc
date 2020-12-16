@@ -1,6 +1,6 @@
 " github amix/vimrc
 
-let vim_runtime = $HOME . '/.dotfiles/vim/amix_vimrc' 
+let vim_runtime = $HOME . '/.dotfiles/external/amix_vimrc' 
 
 execute 'set runtimepath+=' . vim_runtime
 

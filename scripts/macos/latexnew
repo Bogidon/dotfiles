@@ -1,0 +1,32 @@
+#!/bin/zsh
+# New LaTex project
+
+DIRECTORY=''
+
+while getopts 'ho:' flag; do
+	case "${flag}" in
+	o) DIRECTORY="${OPTARG}" ;;
+	h) echo "
+			latexnew: creates base directory for optimal LaTeXing.
+
+			-o: specify output directory. If not specified, creates directory in /tmp.
+			-h: displays this help message.
+		" ;;
+	*) error "Unexpected option ${flag}" ;;
+	esac
+done
+
+if [[ -z "$DIRECTORY" ]] ; then # if DIRECTORY is not set, create tmp
+	DIRECTORY=$(mktemp -d /tmp/latextmp.XXXXXXXXXX)
+fi
+
+cp -R "$DOTFILES/templates/latex/" "$DIRECTORY"
+echo "Created base latex directory: $DIRECTORY"
+
+# Offer to open Sublime
+echo -n "Open in Sublime (y/n)? "
+old_stty_cfg=$(stty -g)
+stty raw -echo ; answer=$(head -c 1) ; stty $old_stty_cfg
+if echo "$answer" | grep -iq "^y" ;then
+	subl "$DIRECTORY";
+fi

@@ -1,109 +1,9 @@
+###############################################################################
+# System                                                                      #
+###############################################################################
+
 # shell envs
-EDITOR=st
-
-# plugins
-plugins+=(osx xcode)
-
-# aliases
-alias emustart='$(which emulator) -avd $(emulator -avd -list-avds | head -n 1)'
-alias jn='jupyter notebook'
-alias sm='smerge'
-alias vs='/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code'
-function zv() { vs $(_z -e "$1") } # z and open vs
-
-# Spatial
-rm_spatial () {
-	adb shell pm list packages | grep spatial_ | cut -c9- | xargs -I {} adb uninstall {}
-}
-alias remove_spatial='rm_spatial'
-replace_spatial () {
-	remove_spatial && adb install -r "$1"
-}
-
-
-# Vagrant command that allows easy manipulation of VMs regardless of current dir
-# (and allows for commands to be applied to all VMs)
-vag() {	
-	if [ -z "$1" ] ; then
-		# show documentation 
-cat <<'EOL'
-vag - shortcut for controlling Vagrant
---------------------------------------
-vag COMMAND [SEARCHSTR|all]
-
-COMMAND - vagrant command that accepts an id (e.g. halt, up, suspend)
-SEARCHSTR - used to grep result of `vagrant global-status` to find IDs
-all - apply to all VMs in `vagrant global-status`
-EOL
-	else
-		if [ -z "$2" ] ; then
-			# run `vagrant $COMMAND`
-			vagrant $1
-		elif [ "$2" = "all" ] ; then
-			# run `vagrant $COMMAND` with each ID in global-status
-			ids=("${(@f)$(vagrant global-status | grep running | cut -c1-8)}")
-			for id in $ids; do
-				cmd="vagrant $1 $id"
-				echo "running... $cmd"
-				eval $cmd
-			done
-		else
-			# run `vagrant $COMMAND` with ID from provided name
-			vagrant $1 $(vagrant global-status | grep $2 | cut -c1-8)
-		fi
-	fi
-}
-
-# Temporary Jupyter Notebook
-jntmp() {
-	TEMP=$(mktemp -d /tmp/jn_tmp.XXXXX)
-	echo "New tmp directory: $TEMP"
-	cp "$DOTFILES/templates/ipynb.ipynb" "$DOTFILES/templates/modsim.py" $TEMP
-	jupyter notebook $TEMP/ipynb.ipynb
-}
-
-# New LaTex project
-latexnew() {
-	DIRECTORY=''
-
-	while getopts 'ho:' flag; do
-	  case "${flag}" in
-	    o) DIRECTORY="${OPTARG}" ;;
-	    h) echo "
-				latexnew: creates base directory for optimal LaTeXing.
-
-				-o: specify output directory. If not specified, creates directory in /tmp.
-				-h: displays this help message.
-			" ;;
-	    *) error "Unexpected option ${flag}" ;;
-	  esac
-	done
-
-	if [[ -z "$DIRECTORY" ]] ; then # if DIRECTORY is not set, create tmp
-		DIRECTORY=$(mktemp -d /tmp/latextmp.XXXXXXXXXX)
-	fi
-
-	cp -R "$DOTFILES/templates/latex/" "$DIRECTORY"
-	echo "Created base latex directory: $DIRECTORY"
-
-	# Offer to open Sublime
-	echo -n "Open in Sublime (y/n)? "
-	old_stty_cfg=$(stty -g)
-	stty raw -echo ; answer=$(head -c 1) ; stty $old_stty_cfg
-	if echo "$answer" | grep -iq "^y" ;then
-	    subl "$DIRECTORY";
-	fi
-}
-
-# Sticky SSH: retry until nonzero exit code
-# from: http://backreference.org/2013/04/26/ssh-auto-reconnect/
-sssh(){
-  # try to connect every 0.5 secs (modulo timeouts)
-  while true; do command ssh "$@"; [ $? -eq 0 ] && break || sleep 0.5; done
-}
-
-# iTerm2
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+EDITOR=vs
 
 # macOS path management
 # see: https://scriptingosx.com/2017/05/where-paths-come-from/
@@ -114,17 +14,35 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 # (intentionally disable the default way paths are installed on OS's)
 export PATH="$BOG_PATH"
 
-# Language Version Managers
+###############################################################################
+# ZSH                                                                         #
+###############################################################################
 
-## rbenv (Ruby)
+# plugins
+plugins+=(osx xcode)
+
+###############################################################################
+# Aliases                                                                     #
+###############################################################################
+
+source "$DOTFILES/aliases/aliases_macos"
+
+###############################################################################
+# Other software                                                              #
+###############################################################################
+
+# iTerm2
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+# rbenv (Ruby)
 eval "$(rbenv init -)"
 
-## pyenv (Python)
+# pyenv (Python)
 eval "$(pyenv init -)"
 
-## gvm (Go)
+# gvm (Go)
 test -e "${HOME}/.gvm/scripts/gvm" && source "${HOME}/.gvm/scripts/gvm"
 
-## nvm (Node)
+# nvm (Node)
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
 [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"

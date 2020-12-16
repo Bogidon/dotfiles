@@ -154,8 +154,8 @@ configure() {
     ln -s -f $DOTFILES/git/.gitconfig $HOME
     ln -s -f $DOTFILES/git/.gitignore_global $HOME
     ln -s -f $DOTFILES/vim/.vimrc $HOME
-    ln -s -f $DOTFILES/tmux/gpakosz_tmux/.tmux.conf $HOME
-    ln -s -f $DOTFILES/tmux/.tmux.conf.local $HOME
+    ln -s -f $DOTFILES/external/gpakosz_tmux/.tmux.conf $HOME
+    ln -s -f $DOTFILES/external/.tmux.conf.local $HOME
     ln -s -f $DOTFILES/npm/.npmrc $HOME
     ln -s -f $DOTFILES/eslint/.eslintrc $HOME
   } ; symlink

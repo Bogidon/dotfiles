@@ -1,0 +1,6 @@
+#!/bin/zsh
+# Sticky SSH: retry until nonzero exit code
+# from: http://backreference.org/2013/04/26/ssh-auto-reconnect/
+
+# try to connect every 0.5 secs (modulo timeouts)
+while true; do command ssh "$@"; [ $? -eq 0 ] && break || sleep 0.5; done
