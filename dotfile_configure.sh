@@ -2,6 +2,9 @@
 # Linux
 #
 configure_linux() {
+  echo "Configure for Linux..."
+
+  echo "== Install Dependencies (Linux) =="
   install_dependencies() {
     sudo apt-get install -y \
       bat \
@@ -14,12 +17,14 @@ configure_linux() {
 
     echo "Install NVM"
     curl -o- "https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.0/install.sh" | sh
+    [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
 
     sudo pip install --upgrade pip
     sudo pip3 install --upgrade pip
     sudo pip3 install thefuck
   } ; install_dependencies
 
+  echo "== Move assets (Linux) =="
   move_assets() {
     echo "Moving assets..."
     mkdir -p "$HOME/.fonts"
@@ -27,6 +32,7 @@ configure_linux() {
     echo "Finished moving assets."
   } ; move_assets
 
+  echo "== Configure Gnome Terminal (Linux) =="
   configure_gnome_terminal() {
     echo "Configuring gnome-terminal..."
     profile=$(gsettings get org.gnome.Terminal.ProfilesList default)
@@ -79,7 +85,7 @@ configure_linux() {
     echo "Finished configuring gnome-terminal."
   } ; configure_gnome_terminal
 
-  echo "Configuration complete. Please restart your terminal session."
+  echo "Liinux configuration complete. Please restart your terminal session."
 } ;
 
 #
@@ -88,13 +94,13 @@ configure_linux() {
 configure_macos() {
   echo "Configure for macOS..."
 
-  echo "== Configure Settings =="
+  echo "== Configure Settings (macOS) =="
   configure_settings() {
     echo "Configure macOS settings"
     sh ./macos/.macos
   } ; configure_settings
 
-  echo "== Install Dependencies =="
+  echo "== Install Dependencies (macOS) =="
   install_dependencies() {
     which -s brew
     if [[ $? != 0 ]] ; then
@@ -121,9 +127,10 @@ configure_macos() {
 
     echo "Install nvm"
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | sh
+    [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
   } ; install_dependencies
 
-  echo "== Change default shell to zsh =="
+  echo "== Change default shell to zsh (macOS) =="
   change_shell() {
     # append homebrew zsh to /etc/shells
     ZSHPATH='/usr/local/bin/zsh'
@@ -132,12 +139,12 @@ configure_macos() {
     chsh -s /usr/local/bin/zsh
   } ; change_shell
 
-  echo "== Configure iTerm =="
+  echo "== Configure iTerm (macOS) =="
   configure_iterm() {
     curl -L https://iterm2.com/shell_integration/zsh -o "$HOME/.iterm2_shell_integration.zsh"
   } ; configure_iterm
 
-  echo "== Move assets =="
+  echo "== Move assets (macOS) =="
   move_assets() {
     cp "$DOTFILES/assets/Meslo LG M DZ Regular for Powerline.otf" "$HOME/Library/Fonts"
   } ; move_assets
@@ -147,7 +154,7 @@ configure_macos() {
 # General
 #
 configure() {
-  echo "Symlink (general)"
+  echo "== Symlink (general) =="
   symlink() {
     ln -s -f $DOTFILES/zsh/.zshrc $HOME
     ln -s -f $DOTFILES/zsh/.zshenv $HOME
@@ -165,6 +172,12 @@ configure() {
     linux*)     configure_linux;;
     macos*)     configure_macos;;
   esac
+
+  echo "== Install Dependencies (general) =="
+  install_dependencies() {
+    echo "Install global npm packages"
+    $DOTFILES/npm/install-global-npm.sh
+  } ; install_dependencies
 
   echo "√√ Configuration complete √√"
 }
