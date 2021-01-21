@@ -32,6 +32,9 @@
 	# pretty log
 	lgm = log --graph --all --pretty=medium --decorate=short
 
+	# ex-branch (get last Nth branch by last commit date)
+	xbranch = "!f() { git branch --sort=-committerdate --format='%(refname:short)' | sed -n "${1:-1}p"; }; f"
+
 [color]
 	ui = always
 
