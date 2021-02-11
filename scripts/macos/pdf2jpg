@@ -1,0 +1,4 @@
+#!/bin/zsh
+# Convert PDF file (passed as arg) to jpg(s)
+
+convert -density 100 $1 ./page_%d.jpg
