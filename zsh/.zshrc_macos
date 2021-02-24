@@ -3,7 +3,7 @@
 ###############################################################################
 
 # shell envs
-EDITOR=vs
+EDITOR='vim'
 
 # macOS path management
 # see: https://scriptingosx.com/2017/05/where-paths-come-from/
