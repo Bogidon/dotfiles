@@ -33,6 +33,9 @@ autoload -U compinit
 compinit -u
 _comp_options+=(globdots) # show hidden files and folders
 
+# mass rename files
+autoload zmv
+
 # exclude items from completion
 zstyle ':completion:*' ignored-patterns '__nvmrc_loader|__nvm_forward'
 
