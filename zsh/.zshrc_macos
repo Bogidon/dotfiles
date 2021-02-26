@@ -32,7 +32,9 @@ source "$DOTFILES/aliases/aliases_macos"
 ###############################################################################
 
 # iTerm2
+export ITERM2_SQUELCH_MARK=1
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+BULLETTRAIN_PROMPT_CHAR="%{$(iterm2_prompt_mark)%} %B\$%b"
 
 # rbenv (Ruby)
 eval "$(rbenv init -)"
