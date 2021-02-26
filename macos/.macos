@@ -172,7 +172,8 @@ defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
 ###############################################################################
 
 # Show only open applications in the Dock
-defaults write com.apple.dock static-only -bool true
+# disabled because it also hides the downloads folder
+# defaults write com.apple.dock static-only -bool true
 
 # Don’t show recent applications in Dock
 defaults write com.apple.dock show-recents -bool false
