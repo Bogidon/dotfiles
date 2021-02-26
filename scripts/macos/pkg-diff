@@ -1,0 +1,17 @@
+#!/bin/zsh
+# Diff package-lock files between commits
+# Requires delta for diff: https://github.com/dandavison/delta
+
+diff -u \
+    <(git show $1:package-lock.json | jq '.dependencies | map_values(.version)') \
+    <(git show $2:package-lock.json | jq '.dependencies | map_values(.version)') \
+    | sed -E "3p; /^(@| )/d" \
+    | delta -s \
+        --hunk-header-style="omit" \
+        --line-numbers-left-format='' \
+        --line-numbers-right-format='' \
+        --word-diff-regex="\S+" \
+        --max-line-distance=1.0 
+
+# alternative with colordiff:
+# colordiff --suppress-common-lines -y <(git show $1:package-lock.json | jq '.dependencies | map_values(.version)') <(git show $2:package-lock.json | jq '.dependencies | map_values(.version)') 

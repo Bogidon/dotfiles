@@ -18,6 +18,7 @@ brew "diff-so-fancy"
 brew "expect" # unbuffer command, for preserving color when piping: https://superuser.com/a/751809
 brew "ffmpeg"
 brew "git"
+brew "git-delta"
 brew "hicolor-icon-theme"
 brew "git-annex"
 brew "git-extras"
