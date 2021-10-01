@@ -66,6 +66,7 @@ cask "sip"
 cask "spark"
 cask "sublime-merge"
 cask "visual-studio-code"
+cask "hey"
 
 # mas (App Store)
 mas "Paste - Clipboard Manager", id: 967805235
