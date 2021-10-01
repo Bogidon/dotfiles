@@ -8,3 +8,4 @@ alias reload='source ~/.zshenv && source ~/.zshrc'
 # git
 alias gxb='git xbranch'
 alias gbn='git rev-parse --abbrev-ref HEAD' # print branch name
+alias gdn='git diff --name-status' # print files changed between commits
