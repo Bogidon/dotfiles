@@ -9,3 +9,4 @@ alias reload='source ~/.zshenv && source ~/.zshrc'
 alias gxb='git xbranch'
 alias gbn='git rev-parse --abbrev-ref HEAD' # print branch name
 alias gdn='git diff --name-status' # print files changed between commits
+alias gpoh='git push -u origin head' # push current head to origin
