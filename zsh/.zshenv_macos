@@ -15,6 +15,9 @@ export JAVA_HOME="/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/
 # Build
 export BOG_PATH=$(echo "
 $BOG_PATH
+:$HOME/.pyenv/shims
+:$HOME/.rbenv/shims
+:$HOME/.rbenv/bin
 :/usr/local/opt/openssl/bin
 :/usr/local/bin
 :/usr/local/sbin
@@ -27,8 +30,6 @@ $BOG_PATH
 :$DOTFILES/scripts/macos
 :$DOTFILES/zsh/oh-my-zsh-custom/plugins/git-open
 :$HOME/.local/bin
-:$HOME/.rbenv/shims
-:$HOME/.rbenv/bin
 :$HOME/.avn/bin
 :$HOME/.yarn/bin
 :$ANDROID_HOME/tools
