@@ -39,14 +39,6 @@ autoload zmv
 # exclude items from completion
 zstyle ':completion:*' ignored-patterns '__nvmrc_loader|__nvm_forward'
 
-# Source OS-specific .zshrc
-source "$DOTFILES/zsh/.zshrc_$BOGDAN_OSID"
-
-# Machine specific dotfile
-if [[ -f "$HOME/.zshrc_local" ]]; then
-	source "$HOME/.zshrc_local"
-fi
-
 ###############################################################################
 # Other software                                                              #
 ###############################################################################
@@ -56,3 +48,18 @@ fi
 
 # bat - better cat
 export MANPAGER="sh -c 'col -bx | bat -l man -p'" # colorize man pages
+
+###############################################################################
+# Other dotfiles                                                              #
+###############################################################################
+
+# OS-specific .zshrc
+source "$DOTFILES/zsh/.zshrc_$BOGDAN_OSID"
+
+# Machine specific .zshrc
+if [[ -f "$HOME/.zshrc_local" ]]; then
+  source "$HOME/.zshrc_local"
+fi
+
+# OS-specific aliases
+source "$DOTFILES/aliases/aliases_$BOGDAN_OSID"

@@ -1,4 +1,8 @@
-#!/bin/zsh
+#!/usr/local/bin/zsh
 # Open VS through Z
 
+setopt aliases
+
+
+. "$DOTFILES/external/z_jump-around/z.sh"
 vs $(_z -e "$1")
