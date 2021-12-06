@@ -18,6 +18,7 @@ $BOG_PATH
 :$HOME/.pyenv/shims
 :$HOME/.rbenv/shims
 :$HOME/.rbenv/bin
+:$HOME/.cargo/bin
 :/usr/local/opt/openssl/bin
 :/usr/local/bin
 :/usr/local/sbin
