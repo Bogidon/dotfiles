@@ -48,6 +48,7 @@ zstyle ':completion:*' ignored-patterns '__nvmrc_loader|__nvm_forward'
 
 # bat - better cat
 export MANPAGER="sh -c 'col -bx | bat -l man -p'" # colorize man pages
+export MANROFFOPT="-c"
 
 ###############################################################################
 # Other dotfiles                                                              #
