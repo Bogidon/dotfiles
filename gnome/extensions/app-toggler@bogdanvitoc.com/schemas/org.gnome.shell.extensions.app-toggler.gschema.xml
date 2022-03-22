@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema id="org.gnome.shell.extensions.app-toggler" path="/org/gnome/shell/extensions/app-toggler/">
+  	<!-- Name for toggled apps must match "toggle-<wmclass>" -->
+		<key type="as" name="toggle-zeal">
+			<default><![CDATA[['<Alt>Space']]]></default>
+			<summary>The key to toggle Zeal.</summary>
+		</key>
+		<!-- <key name="cool-hotkey" type="as">
+        <default><![CDATA[['<Ctrl><Super>T']]]></default>
+        <summary>Hotkey to open the cool stuff.</summary>
+    </key> -->
+  </schema>
+</schemalist>
