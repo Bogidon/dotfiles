@@ -3,6 +3,8 @@
 #         without any warranty.
 #         Copyright 2012— Gregory Pakosz (@gpakosz).
 
+# Tmux conf provided by github:gpakosz/.tmux for user customization
+
 
 # Mine!
 set-window-option -g mode-keys vi
@@ -252,7 +254,7 @@ tmux_conf_copy_to_os_clipboard=false
 #set -g history-limit 10000
 
 # start with mouse mode enabled
-#set -g mouse on
+set -g mouse on
 
 # force Vi mode
 #   really you should export VISUAL or EDITOR environment variable, see manual

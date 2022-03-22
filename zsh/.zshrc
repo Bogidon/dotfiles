@@ -5,7 +5,7 @@
 ZSH_CUSTOM="$DOTFILES/zsh/oh-my-zsh-custom"
 
 # plugins
-plugins=(git git-open git-extras sublime postgres zsh-syntax-highlighting gradle docker)
+plugins=(git git-open git-extras sublime postgres zsh-syntax-highlighting gradle docker tmux)
 
 # theme
 ZSH_THEME="bullet-train"
