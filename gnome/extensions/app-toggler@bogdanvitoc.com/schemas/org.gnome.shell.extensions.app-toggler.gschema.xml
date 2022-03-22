@@ -6,9 +6,5 @@
 			<default><![CDATA[['<Alt>Space']]]></default>
 			<summary>The key to toggle Zeal.</summary>
 		</key>
-		<!-- <key name="cool-hotkey" type="as">
-        <default><![CDATA[['<Ctrl><Super>T']]]></default>
-        <summary>Hotkey to open the cool stuff.</summary>
-    </key> -->
   </schema>
 </schemalist>

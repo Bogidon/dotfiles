@@ -9,7 +9,7 @@ const Keybinder = Me.imports.keybinder;
 const log = Me.imports.logging.log;
 
 // Add apps you want to toggle here simply via their wmclass.
-// (find it in the corresponding .desktop file or via looking glass)
+// Find it in the corresponding .desktop file or via looking glass.
 // Then configure the keybinding in the settings schema.
 const Apps = ["Zeal"];
 
@@ -38,10 +38,10 @@ function disable() {
     log("extension disable complete");
 }
 
-function toggleApp(wmclass) {
+toggleApp = (wmclass) => {
     const appWindow = global.get_window_actors()
         .map(wa => wa.meta_window)
-        .find(w => w.wm_class === wmclass);
+        .find(w => w.wm_class.toLowerCase().includes(wmclass.toLowerCase()));
 
     // Launch app if window not open
     if (!appWindow) {

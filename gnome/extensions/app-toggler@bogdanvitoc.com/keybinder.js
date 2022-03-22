@@ -24,7 +24,6 @@ function bind(keyBindings) {
                 Meta.KeyBindingFlags.NONE,
                 Shell.ActionMode.NORMAL,
                 callback];
-            log(`args: ${args}`)
             Main.wm.addKeybinding(...args);
         }
         else if (Main.wm.addKeybinding && Shell.KeyBindingMode) { // introduced in 3.7.5
