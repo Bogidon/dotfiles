@@ -61,5 +61,6 @@ if [[ -f "$HOME/.zshrc_local" ]]; then
   source "$HOME/.zshrc_local"
 fi
 
-# OS-specific aliases
-source "$DOTFILES/aliases/aliases_$BOGDAN_OSID"
+# Aliases
+source "$DOTFILES/aliases/common"
+source "$DOTFILES/aliases/$BOGDAN_OSID"
