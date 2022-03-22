@@ -1,0 +1,12 @@
+#!/bin/zsh
+# Open a GUI application in the background, disown, and divert logs to common location.
+# Accomplished through nohup command: 
+
+# Fix problem so Wayland/GUI apps can run as root
+# (for apps that don't properly request permission escalation in some instances)
+# see: https://github.com/unetbootin/unetbootin/issues/194#issuecomment-433417580
+if (( $EUID == 0 )); then
+	export QT_X11_NO_MITSHM=1
+fi
+
+nohup $1 > "/var/log/bogscripts/$1-$USER.nohup.log" 2> "/var/log/bogscripts/$1-$USER.nohup.err" &
