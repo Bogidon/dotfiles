@@ -1,0 +1,12 @@
+#!/bin/zsh
+# Toggle zeal, by closing if open or opening if closed
+# For recreating shortcut functionality through Gnome Keyboard Shortcuts
+# https://github.com/zealdocs/zeal/issues/1249#issuecomment-903054600
+
+zeal_pid=$(pgrep -x zeal)
+
+if [[ -n "$zeal_pid" ]]; then
+	kill -9 $zeal_pid
+else
+	zeal -qwindowgeometry 1000x1000+200+200 &
+fi
