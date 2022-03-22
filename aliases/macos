@@ -1,9 +1,7 @@
 #!/bin/zsh
 alias emustart='$(which emulator) -avd $(emulator -avd -list-avds | head -n 1)'
 alias jn='jupyter notebook'
-alias sm='smerge'
 alias vs='/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code'
-alias reload='source ~/.zshenv && source ~/.zshrc'
 alias cgrep='grep --color=always' # grep preserving color
 
 # git

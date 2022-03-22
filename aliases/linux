@@ -1,0 +1,3 @@
+#!/bin/zsh
+alias open="xdg-open"
+alias vs="code"
