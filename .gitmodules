@@ -22,6 +22,9 @@
 [submodule "z_jump-around"]
 	path = external/z_jump-around
 	url = git@github.com:rupa/z.git
+[submodule "external/diff-so-fancy"]
+	path = external/diff-so-fancy
+	url = git@github.com:so-fancy/diff-so-fancy.git
 [submodule "external/gimp-config"]
 	path = external/gimp-config
 	url = git@github.com:Bogidon/gimp-config.git

@@ -1,0 +1,6 @@
+# Build
+export PATH=$(echo "
+$PATH
+:$HOME/bin-linux
+:$HOME/bin-common
+" | tr -d '\n') # remove newlines
