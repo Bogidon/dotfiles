@@ -1,3 +1,7 @@
 #!/bin/zsh
 alias open="xdg-open"
 alias vs="code"
+
+# Copy & paste to/from general clipboard
+alias xc="xclip -selection clipboard"
+alias xp="xclip -o -selection clipboard"
