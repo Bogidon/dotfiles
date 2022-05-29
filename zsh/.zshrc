@@ -50,6 +50,14 @@ zstyle ':completion:*' ignored-patterns '__nvmrc_loader|__nvm_forward'
 export MANPAGER="sh -c 'col -bx | bat -l man -p'" # colorize man pages
 export MANROFFOPT="-c"
 
+# nvm (node)
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# pyenv (Python)
+eval "$(pyenv init -)"
+
 ###############################################################################
 # Other dotfiles                                                              #
 ###############################################################################

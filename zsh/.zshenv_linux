@@ -1,6 +1,7 @@
-# Build
+#!/bin/zsh
+
+# Custom path
 export PATH=$(echo "
-$PATH
-:$HOME/bin-linux
-:$HOME/bin-common
+$HOME/bin-linux
+:$PATH
 " | tr -d '\n') # remove newlines

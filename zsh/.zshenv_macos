@@ -1,3 +1,5 @@
+#!/bin/zsh
+
 export SSH_KEY_PATH="$HOME/.ssh/id_rsa"
 export ANDROID_HOME="$HOME/Library/Android/sdk"
 export ANDROID_NDK_HOME="$HOME/Library/Android/android-ndk-r16b"
@@ -6,19 +8,22 @@ export LDFLAGS="-L/usr/local/opt/openssl/lib -L/usr/local/opt/libxml2/lib"
 export CPPFLAGS="-I/usr/local/opt/openssl/include -I/usr/local/opt/libxml2/include"
 export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig"
 export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/opt/openssl/lib/
-export PYENV_ROOT="$HOME/.pyenv/"
 export GOROOT="$HOME/.gvm/gos/go1.13.7"
 export GOPATH="$HOME/.gvm/pkgsets/go1.13.7/global"
-export NVM_DIR="$HOME/.nvm"
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home/jre"
 
-# Build
-export BOG_PATH=$(echo "
-$BOG_PATH
-:$HOME/bin
-:$HOME/bin-common
+# I used to force path to exactly what I specified here via an env var called 'BOG_PATH'
+# that I would reset PATH to at the end of the shell init. This was in an effort to have
+# full control over my paths, instead of allowing applications to install into my path
+# through macOS's path_helper tool (https://scriptingosx.com/2017/05/where-paths-come-from/)
+#
+#
+# For now stopping this practice, to give some control back to the OS. May re-enable in the future.
+#
+export PATH=$(echo "
+$HOME/bin
 :$HOME/bin-macos
-:$HOME/.pyenv/shims
+:$PATH
 :$HOME/.rbenv/shims
 :$HOME/.rbenv/bin
 :$HOME/.cargo/bin
@@ -47,12 +52,3 @@ $BOG_PATH
 :$ANDROID_HOME/platform-tools
 :$JAVA_HOME/bin
 " | tr -d '\n') # remove newlines
-
-
-# So .zshrc can use commands
-export PATH="$BOG_PATH"
-
-# For non-interactive environments, where .zshrc will not be run
-# (.zshrc will reset path to BOG_PATH)
-export PATH="$PATH:$HOME/.gvm/gos/go1.13.10/bin"
-export PATH="$PATH:$HOME/.nvm/versions/node/v12.10.0/bin" # it helps to create an nvm alias named "sublime"
