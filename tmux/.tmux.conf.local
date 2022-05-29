@@ -6,11 +6,16 @@
 # Tmux conf provided by github:gpakosz/.tmux for user customization
 
 
-# Mine!
+# -- Mine! ----------------------------------------------------------
+
 set-window-option -g mode-keys vi
 bind-key -T copy-mode-vi 'v' send -X begin-selection
 bind-key -T copy-mode-vi 'y' send -X copy-selection-and-cancel
 
+# Unbind C-a to disable Screen-compatible prefix added by gpakosz/.tmux
+# https://github.com/gpakosz/.tmux/issues/53
+set -gu prefix2
+unbind C-a
 
 
 # -- navigation ----------------------------------------------------------------
