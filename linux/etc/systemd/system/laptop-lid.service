@@ -1,0 +1,10 @@
+[Unit]
+Description=Laptop Lid
+After=suspend.target
+
+[Service]
+ExecStart=/etc/acpi/laptop-lid.sh
+
+[Install]
+WantedBy=multi-user.target
+WantedBy=suspend.target
