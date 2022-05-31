@@ -21,9 +21,7 @@ export JAVA_HOME="/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/
 # For now stopping this practice, to give some control back to the OS. May re-enable in the future.
 #
 export PATH=$(echo "
-$HOME/bin
-:$HOME/bin-macos
-:$PATH
+$PATH
 :$HOME/.rbenv/shims
 :$HOME/.rbenv/bin
 :$HOME/.cargo/bin
@@ -36,8 +34,6 @@ $HOME/bin
 :/usr/sbin
 :/sbin
 :/usr/local/opt/mysql@5.6/bin
-:$DOTFILES/scripts/macos
-:$DOTFILES/zsh/oh-my-zsh-custom/plugins/git-open
 :$HOME/.local/bin
 :$HOME/.avn/bin
 :$HOME/.yarn/bin

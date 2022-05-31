@@ -1,7 +1,0 @@
-#!/bin/zsh
-# Temporary Jupyter Notebook
-
-TEMP=$(mktemp -d /tmp/jn_tmp.XXXXX)
-echo "New tmp directory: $TEMP"
-cp "$DOTFILES/templates/ipynb.ipynb" "$DOTFILES/templates/modsim.py" $TEMP
-jupyter notebook $TEMP/ipynb.ipynb

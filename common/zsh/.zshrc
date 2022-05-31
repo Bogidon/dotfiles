@@ -2,7 +2,7 @@
 # ZSH                                                                         #
 ###############################################################################
 
-ZSH_CUSTOM="$DOTFILES/zsh/oh-my-zsh-custom"
+ZSH_CUSTOM="$DOTFILES/common/zsh/oh-my-zsh-custom"
 
 # plugins
 plugins=(git git-open git-extras sublime postgres zsh-syntax-highlighting gradle docker tmux)
@@ -63,7 +63,7 @@ eval "$(pyenv init -)"
 ###############################################################################
 
 # OS-specific .zshrc
-source "$DOTFILES/zsh/.zshrc_$BOGDAN_OSID"
+source "$DOTFILES/$BOGDAN_OSID/zsh/.zshrc_$BOGDAN_OSID"
 
 # Machine specific .zshrc
 if [[ -f "$HOME/.zshrc_local" ]]; then
@@ -71,5 +71,5 @@ if [[ -f "$HOME/.zshrc_local" ]]; then
 fi
 
 # Aliases
-source "$DOTFILES/aliases/common"
-source "$DOTFILES/aliases/$BOGDAN_OSID"
+for f in $DOTFILES/common/aliases/*; do source $f; done
+for f in $DOTFILES/$BOGDAN_OSID/aliases/*; do source $f; done

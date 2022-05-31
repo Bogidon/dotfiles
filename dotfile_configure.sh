@@ -28,7 +28,7 @@ configure_linux() {
   move_assets() {
     echo "Moving assets..."
     mkdir -p "$HOME/.fonts"
-    cp "$DOTFILES/assets/Meslo LG M DZ Regular for Powerline.otf" "$HOME/.fonts"
+    cp "$DOTFILES/common/assets/Meslo LG M DZ Regular for Powerline.otf" "$HOME/.fonts"
     echo "Finished moving assets."
   } ; move_assets
 
@@ -119,7 +119,7 @@ configure_macos() {
     fi
 
     echo "Install from Brewfile"
-    ln -s -f $DOTFILES/homebrew/.Brewfile $HOME
+    ln -s -f $DOTFILES/macos/homebrew/.Brewfile $HOME
     yes | brew bundle install --global
 
     echo "Install GVM"
@@ -146,7 +146,7 @@ configure_macos() {
 
   echo "== Move assets (macOS) =="
   move_assets() {
-    cp "$DOTFILES/assets/Meslo LG M DZ Regular for Powerline.otf" "$HOME/Library/Fonts"
+    cp "$DOTFILES/common/assets/Meslo LG M DZ Regular for Powerline.otf" "$HOME/Library/Fonts"
   } ; move_assets
 } ;
 
@@ -156,16 +156,15 @@ configure_macos() {
 configure() {
   echo "== Symlink (general) =="
   symlink() {
-    ln -s -f $DOTFILES/zsh/.zshrc $HOME
-    ln -s -f $DOTFILES/zsh/.zshenv $HOME
-    ln -s -f $DOTFILES/git/.gitconfig $HOME
-    ln -s -f $DOTFILES/git/.gitignore_global $HOME
-    ln -s -f $DOTFILES/vim/.vimrc $HOME
+    ln -s -f $DOTFILES/common/zsh/.zshrc $HOME
+    ln -s -f $DOTFILES/common/zsh/.zshenv $HOME
+    ln -s -f $DOTFILES/common/git/.gitconfig $HOME
+    ln -s -f $DOTFILES/common/git/.gitignore_global $HOME
+    ln -s -f $DOTFILES/common/vim/.vimrc $HOME
+    ln -s -f $DOTFILES/common/tmux/.tmux.conf.local $HOME
+    ln -s -f $DOTFILES/common/npm/.npmrc $HOME
+    ln -s -f $DOTFILES/common/eslint/.eslintrc $HOME
     ln -s -f $DOTFILES/external/gpakosz_tmux/.tmux.conf $HOME
-    ln -s -f $DOTFILES/tmux/.tmux.conf.local $HOME
-    ln -s -f $DOTFILES/npm/.npmrc $HOME
-    ln -s -f $DOTFILES/eslint/.eslintrc $HOME
-    ln -s -f $DOTFILES/bin/$BOGDAN_OSID/ $HOME/bin
   } ; symlink
 
   echo "osid: $BOGDAN_OSID"
@@ -177,7 +176,7 @@ configure() {
   echo "== Install Dependencies (general) =="
   install_dependencies() {
     echo "Install global npm packages"
-    $DOTFILES/npm/install-global-npm.sh
+    $DOTFILES/common/npm/install-global-npm.sh
   } ; install_dependencies
 
   echo "√√ Configuration complete √√"
@@ -185,4 +184,4 @@ configure() {
 
 #
 # -- execute --
-source ./zsh/.zshenv && configure
+source ./common/zsh/.zshenv && configure

@@ -20,7 +20,7 @@ if [[ -z "$DIRECTORY" ]] ; then # if DIRECTORY is not set, create tmp
 	DIRECTORY=$(mktemp -d /tmp/latextmp.XXXXXXXXXX)
 fi
 
-cp -R "$DOTFILES/templates/latex/" "$DIRECTORY"
+cp -R "$DOTFILES/common/templates/latex/" "$DIRECTORY"
 echo "Created base latex directory: $DIRECTORY"
 
 # Offer to open Sublime

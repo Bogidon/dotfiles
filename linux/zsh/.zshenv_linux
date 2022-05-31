@@ -2,6 +2,5 @@
 
 # Custom path
 export PATH=$(echo "
-$HOME/bin-linux
-:$PATH
+$PATH
 " | tr -d '\n') # remove newlines
