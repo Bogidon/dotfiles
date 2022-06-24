@@ -28,3 +28,6 @@
 [submodule "external/gimp-config"]
 	path = external/gimp-config
 	url = git@github.com:Bogidon/gimp-config.git
+[submodule "external/ardba_proton_aoe2de_mpfix"]
+	path = external/ardba_proton_aoe2de_mpfix
+	url = https://github.com/ardba/proton_aoe2de_mpfix
