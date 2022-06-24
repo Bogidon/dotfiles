@@ -3,6 +3,7 @@
   "description": "App Toggler (hide/show or launch if not running)",
   "uuid": "app-toggler@bogdanvitoc.com",
   "shell-version": [
-    "41"
+    "41",
+    "42"
   ]
 }
