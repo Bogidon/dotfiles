@@ -31,3 +31,9 @@
 [submodule "external/ardba_proton_aoe2de_mpfix"]
 	path = external/ardba_proton_aoe2de_mpfix
 	url = https://github.com/ardba/proton_aoe2de_mpfix
+[submodule "external/nix-shell"]
+	path = external/nix-shell
+	url = https://github.com/chisui/zsh-nix-shell.git
+[submodule "external/powerlevel10k-zsh-theme"]
+	path = external/powerlevel10k-zsh-theme
+	url = https://github.com/romkatv/powerlevel10k.git

@@ -28,7 +28,7 @@ configure_linux() {
   move_assets() {
     echo "Moving assets..."
     mkdir -p "$HOME/.fonts"
-    cp "$DOTFILES/common/assets/Meslo LG M DZ Regular for Powerline.otf" "$HOME/.fonts"
+    cp -r "$DOTFILES/common/assets/fonts/." "$HOME/.fonts"
     echo "Finished moving assets."
   } ; move_assets
 
@@ -67,7 +67,7 @@ configure_linux() {
     gsettings set $schemapath allow-bold "true"
     gsettings set $schemapath use-transparent-background "false"
     gsettings set $schemapath use-theme-transparency 'false' # don't use default system theme transparency
-    gsettings set $schemapath font "'Meslo LG M DZ for Powerline 12'"
+    gsettings set $schemapath font "'MesloLGS NF 10'"
     gsettings set $schemapath use-system-font "false"
     gsettings set $schemapath bold-color-same-as-fg "false"
     gsettings set $schemapath rewrap-on-resize "true"

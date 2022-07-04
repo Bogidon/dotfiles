@@ -42,6 +42,7 @@ GPU rendering with Firefox and Chrome (WIP)
 - Getting deep sleep working: https://community.frame.work/t/fedora-34-on-the-framework-laptop/2723/49?u=bogdan_vitoc
   - but keeping my luks uuid for disk encryption
 - Installed TLP
+- SSD suspend battery life: `sudo grubby --update-kernel=ALL --args="nvme.noacpi=1"`
 
 ## Bluetooth Issues
 Disabling autosuspend of bluetooth devices:
@@ -56,3 +57,6 @@ This was fixed by updating to 5.16.11 (though I also disabled autosuspend and di
 
 ## Displays
 Had an issue with my Dell U2421E monitor being locked to 30hz when used over USB-C-to-C w/ PD. Swapped for HDMI-HDMI, no issue. Displayport-to-USB-C, no issue. Back to USB-C-to-C, now no issue! Works with 60fps.
+
+Issue with U2421E blackscreening.
+https://bugzilla.kernel.org/show_bug.cgi?id=211807

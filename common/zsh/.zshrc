@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 ###############################################################################
 # ZSH                                                                         #
 ###############################################################################
@@ -5,19 +12,13 @@
 ZSH_CUSTOM="$DOTFILES/common/zsh/oh-my-zsh-custom"
 
 # plugins
-plugins=(git git-open git-extras sublime postgres zsh-syntax-highlighting gradle docker tmux)
+plugins=(git git-open git-extras sublime postgres zsh-syntax-highlighting gradle docker tmux nix-shell)
 
-# theme
-ZSH_THEME="bullet-train"
-BULLETTRAIN_PROMPT_ORDER=(
-  dir
-  git
-)
-BULLETTRAIN_GIT_ADDED=" "
-BULLETTRAIN_GIT_DELETED=" "
-BULLETTRAIN_GIT_MODIFIED=" "
-BULLETTRAIN_GIT_RENAMED=" "
-BULLETTRAIN_GIT_UNTRACKED=" "
+# P10K Prompt (ZSH Theme)
+# To customize prompt, run `p10k configure` or edit $POWERLEVEL9K_CONFIG_FILE
+ZSH_THEME="powerlevel10k"
+POWERLEVEL9K_CONFIG_FILE=$DOTFILES/common/zsh/p10k.zsh
+[[ ! -f $POWERLEVEL9K_CONFIG_FILE ]] || source $POWERLEVEL9K_CONFIG_FILE
 
 # keys
 bindkey '^_' undo # undo completion with ctrl + _
@@ -57,6 +58,11 @@ export NVM_DIR="$HOME/.nvm"
 
 # pyenv (Python)
 eval "$(pyenv init -)"
+
+# Terraform
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/bin/terraform terraform
+
 
 ###############################################################################
 # Other dotfiles                                                              #
