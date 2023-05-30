@@ -58,9 +58,16 @@
 
 [include]
 	path = ~/.gitconfig_local
+
 [url "git@github.com:"]
 	insteadOf = https://github.com/
+
 [init]
 	defaultBranch = main
+
 [pull]
 	ff = only
+
+[push]
+	default = upstream
+	autoSetupRemote = true

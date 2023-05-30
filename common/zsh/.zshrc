@@ -59,9 +59,26 @@ export NVM_DIR="$HOME/.nvm"
 # pyenv (Python)
 eval "$(pyenv init -)"
 
+
 # Terraform
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/bin/terraform terraform
+
+# Direnv
+# eval "$(direnv hook zsh)" 
+
+# # Silence direnv noisy diff messages
+# # from: https://github.com/direnv/direnv/issues/68#issuecomment-1003426550
+# copy_function() {
+#   test -n "$(declare -f "$1")" || return 
+#   eval "${_/$1/$2}"
+# }
+
+# copy_function _direnv_hook _direnv_hook__old
+
+# _direnv_hook() {
+#   _direnv_hook__old "$@" 2> >(egrep -v '^direnv: (export)')
+# }
 
 
 ###############################################################################

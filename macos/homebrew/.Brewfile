@@ -15,6 +15,7 @@ brew "bundletool"
 brew "cloc"
 brew "cmake"
 brew "diff-so-fancy"
+brew "direnv"
 brew "expect" # unbuffer command, for preserving color when piping: https://superuser.com/a/751809
 brew "ffmpeg"
 brew "git"

@@ -3,6 +3,12 @@ alias reload='source ~/.zshenv && source ~/.zshrc'
 alias dotedit="subl $DOTFILES"
 alias sm='smerge'
 
+# git
+alias gxb='git xbranch'
+alias gbn='git rev-parse --abbrev-ref HEAD' # print branch name
+alias gdn='git diff --name-status' # print files changed between commits
+alias gpoh='git push -u origin head' # push current head to origin
+
 # Tmux
 alias tas="tmux attach-session"
 

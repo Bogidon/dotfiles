@@ -1,0 +1,2 @@
+direnv
+acpid # power lid close detection
