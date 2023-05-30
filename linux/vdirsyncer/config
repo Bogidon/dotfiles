@@ -43,32 +43,31 @@ collections = [["fastmail_body", null, "bogdan@clevelandowns.coop"]]
 [storage fastmail_primary]
 type = "http"
 read_only = true
-url = "https://user.fm/calendar/v1-c6e4f5506b0ab0f28731bed8d2c9df7a/Fastmail%20Calendar.ics"
+
 
 [storage fastmail_primary_private]
 type = "http"
 read_only = true
-url = "https://user.fm/freebusy/v1-e035c13f91af126467e5f7daf1f1fdab/Fastmail%20Calendar%20--%20private.ics"
+
 
 [storage fastmail_events]
 type = "http"
 read_only = true
-url = "https://user.fm/calendar/v1-41012c98d435fbdf90d0f10c439901ea/Events%20of%20Interest.ics"
+
 
 [storage fastmail_plan]
 type = "http"
 read_only = true
-url = "https://user.fm/calendar/v1-a325e70cf886320fd730c63316db0095/Plan.ics"
+
 
 [storage fastmail_body]
 type = "http"
 read_only = true
-url = "https://user.fm/calendar/v1-0b63a45a5aed2ea41ed6099a7b561c5f/Bodily%20Needs.ics"
 
 [storage co_google]
 type = "google_calendar"
 token_file = "~/.vdirsyncer/google_auth"
-client_id = "199219437348-savqhcbrerg4vpvcn2uvncnpbg0459qt.apps.googleusercontent.com"
-client_secret = "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"
+
+
 
 
